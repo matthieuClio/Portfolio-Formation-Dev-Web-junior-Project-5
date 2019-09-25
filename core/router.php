@@ -12,11 +12,16 @@
 		require('../src/controller/accueil.php');
 	}
 
-	/*else if ($url[0] == 'backoffice' && empty($_SESSION['pseudo_user'])) 
+	else if ($url[0] == 'backoffice' && !empty($_SESSION['pseudo_user']) || $url[0] == 'backoffice' && !empty($_POST['submit_connexion']))
+	{
+		require('../src/controller/backoffice.php');
+	}
+
+	else if ($url[0] == 'backoffice' && empty($_SESSION['pseudo_user'])) 
 	{
 		require('../src/controller/backoffice_connexion.php');
 	}
-	*/
+
 
 	else 
 	{

@@ -18,7 +18,7 @@ body {
 }
 
 a {
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 
@@ -34,6 +34,7 @@ h2 {
 	color: white;
 }
 
+
 /* Layout */
 /* ...... */
 /* ...... */
@@ -41,20 +42,32 @@ h2 {
 /* Menu */
 
 .menu {
-	z-index: 3;
+	z-index: 4;
 	position: fixed;
-	padding-top: 35px;
-	padding-bottom: 35px;
+	top: 0;
+	padding-top: 25px;
+	padding-bottom: 25px;
 	width: 100%;
-	background-color: rgb(0, 0, 0, 0.5);
+	background-color: white;
 	text-align: center;
+}
+
+.menu ul {
+	border: 2px solid red;
+}
+
+.logo {
+	border: 2px solid green;
+	padding-right: 50%;
+	font-family: 'Great Vibes', cursive;
+	font-size: 4em;
 }
 
 .menu li {
 	display: inline;
-	margin-right: 5px;
-	font-size: 1.5em;
-	color: white;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: black;
 }
 
 
@@ -63,7 +76,6 @@ h2 {
 .slider {
 	position: relative;
 	height: 580px;
-	border: 5px solid green;
 }
 
 .slider_photo {
@@ -74,10 +86,10 @@ h2 {
 }
 
 .slider_picture {
+	z-index: 3;
 	position: relative;
-	top: 0;
+	top: 100px;
 	margin: auto;
-	margin-top: 100px;
 	max-width: 150px;
 	height: 150px;
 	border: 2px solid white;
@@ -86,37 +98,82 @@ h2 {
 }
 
 .slider_information {
-	position: relative;
+	position: absolute;
 	top: 0;
-	margin-top: 20px;
-	padding-top: 50px;
-	height: 180px;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0, 0, 0, 0.3);
 	text-align: center;
 	color: white;
-	background-color: rgb(0, 0, 0, 0.3);
 }
 
-.slider_information h2 {
+.slider_information h1 {
+	position: relative;
+	top: 280px;
 	padding-bottom: 50px;
-	font-size: 2em;
+	font-size: 2.4em;
 }
 
 .slider_text_one {
-	background-color: red;
 	float: left;
+	margin-top: 270px;
 	width: 50%;
-	height: 100%;
-	text-align: center;
+	text-align: right;
 	font-size: 2em;
 }
 
 .slider_text_two {
-	background-color: orange;
 	float: left;
+	margin-top: 270px;
 	width: 50%;
-	height: 100%;
-	text-align: center;
+	text-align: left;
 	font-size: 2em;
+}
+
+.button_accueil_right {
+	margin-right: 10px;
+}
+
+.button_accueil_left {
+	margin-left: 10px;
+}
+
+
+/* Skill */
+
+.skill {
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.skill h2 {
+	padding-top: 50px;
+	margin-bottom: 50px;
+	font-size: 2.5em;
+	color: black;
+	font-weight: normal;
+}
+
+.specific_skill {
+	display: inline-block;
+	border: 2px solid purple;
+}
+
+.skill p {
+	width: 100px;
+	color: black;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.resize_image {
+	width: 100px;
+	height: 100px;
+}
+
+meter {
+	height: 20px;
+	width: 100px;
 }
 
 
@@ -124,17 +181,18 @@ h2 {
 
 .history {
 	position: relative;
-	border: 2px solid orange;
 	text-align: center;
-	height: 400px;
+	height: 440px;
 }
 
 .history h2 {
 	z-index: 1;
 	position: relative;
 	top: 0;
-	margin-top: 50px;
+	padding-top: 80px;
+	padding-bottom: 20px;
 	width: 100%;
+	background-color: rgb(0, 0, 0, 0.7);
 	font-size: 2em;
 }
 
@@ -142,8 +200,10 @@ h2 {
 	z-index: 2;
 	position: relative;
 	top: 0;
-	margin-top: 50px;
+	padding-top: 20px;
+	height: 300px;
 	width: 100%;
+	background-color: rgb(0, 0, 0, 0.7);
 	font-size: 2em;
 	color: white;
 }
@@ -153,31 +213,153 @@ h2 {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	border: 2px solid purple;
 	background: url(../images/photo/skill.jpg) no-repeat fixed center;
 }
 
 
-/* Skill */
+/* Formation */
 
-.skill {
+.formation {
 	height: 300px;
 	text-align: center;
-	background-color: orange;
+	background-color: white;
 }
 
-.skill h2 {
+.formation h2 {
 	padding-top: 50px;
-	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: normal;
+	color: black;
 }
 
-.skill p {
+.formation p {
+	display: inline-block;
+	margin-top: 50px;
+	text-align: left;
 	border: 2px solid purple;
+	color: #5bc0de;
+	font-size: 1.5em;
+}
+
+.formation span {
+	color: black;
+}
+
+/* Form */
+
+form {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	background-color: red;
+}
+
+form h2 {
+	font-size: 2.3em;
+}
+
+form section {
+	display: inline-block;
+	border: 5px solid purple;
 	margin-top: 50px;
 	color: white;
 	font-size: 1.5em;
 }
 
+.input_text {
+	display: block;
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 10px;
+	width: auto;
+}
+
+
+/* Footer */
+
+.main_footer {
+	height: 200px;
+	background-color: black;
+	text-align: center;
+	font-size: 2em;
+}
+
+
+/* LOG BACKOFFICE */
+
+.background_body {
+	background-color: #f1f1f1;
+}
+
+.connexion_section {
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	width: 350px;
+	height: 100%;
+	font-size: 2em;
+}
+
+.image_connexion_bo {
+	margin: auto;
+	max-width: 200px;
+	max-height: 200px;
+	margin-bottom: 35px;
+}
+
+.connexion_form {
+	padding-top: 35px;
+	padding-bottom: 50px;
+	font-size: 0.7em;
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+.connexion_p {
+	margin-left: 24px;
+	margin-bottom: 3px;
+	width: 85%;
+	text-align: left;
+	color: #72777c;
+}
+
+.input_connexion_bo {
+	margin-bottom: 20px;
+	width: 85%;
+	font-size: 2em;
+	background-color: #fbfbfb;
+	border: none;
+	border: 1px solid #dddddd;
+	box-shadow: 0px 2px 5px #d4d4d4;
+}
+
+.container_checkbox {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 24px;
+	width: 85%;
+}
+
+.input_checkbox_bo {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.restart_password {
+	color: #00b9eb;
+}
+
+.error_bo {
+	margin-top: 10px;
+	text-align: center;
+	color: #d50a0a;
+}
+
+.captcha_resizing {
+	margin-bottom: 10px;
+	max-width: 75px;
+}
 
 
 /* Module (small content) */
@@ -190,12 +372,37 @@ h2 {
 /* ...................... */
 /* ...................... */
 
+.button_blue:hover {
+	background-color: #55B1CD;
+}
 
+.button_orange:hover {
+	background-color: #55B1CD;
+}
 
 /* Factored */
 /* .................... */
 /* .................... */
 
+.button_blue {
+	padding: 15px;
+	background-color: #5bc0de;
+	border: none;
+	border-radius: 2px;
+	font-size: 0.9em;
+	color: white;
+	cursor: pointer;
+}
+
+.button_orange {
+	padding: 15px;
+	background-color: #5bc0de;
+	border: none;
+	border-radius: 2px;
+	font-size: 0.9em;
+	color: white;
+	cursor: pointer;
+}
 
 
 /* MOBILE VERSION */
