@@ -232,33 +232,44 @@ meter {
 	color: black;
 }
 
-.formation p {
+.formation figure {
+	border: 2px solid red;
+	margin: auto;
+	max-width: 70px;
+	margin-bottom: 15px;
+}
+
+.formation div {
 	display: inline-block;
 	margin-top: 50px;
 	text-align: left;
 	border: 2px solid purple;
-	color: #5bc0de;
+	color: black;
 	font-size: 1.5em;
+
 }
 
 .formation span {
-	color: black;
+	font-weight: bold;
+	color: #5bc0de;
+	border-bottom: 1px solid #5bc0de;
 }
+
 
 /* Form */
 
-form {
+.form_contact {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	text-align: center;
 	background-color: red;
 }
 
-form h2 {
+.form_contacth2 {
 	font-size: 2.3em;
 }
 
-form section {
+.form_contact section {
 	display: inline-block;
 	border: 5px solid purple;
 	margin-top: 50px;
@@ -362,6 +373,77 @@ form section {
 }
 
 
+/* BACKOFFICE */
+
+.header_backoffice {
+	z-index: 3;
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	background-color: #23282d;
+}
+
+.container_img_backoffice {
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	max-width: 80px;
+}
+
+.menu_backoffice {
+	position: fixed;
+	margin-top: 100px;
+	width: 200px;
+	height: 837px;
+	background-color: #23282d;
+}
+
+.tab_backoffice {
+	padding-left: 10%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 90%;
+	font-size: 1.5em;
+	background-color: #23282d;
+	color: white;
+	cursor: pointer;
+	border-top: 1px solid white;
+}
+
+.logo_tab_backoffice {
+	width: 25px;
+	display: inline;
+}
+
+.text_tab_backoffice {
+	color: white;
+	display: inline;
+}
+
+.contain_backoffice {
+	margin-left: 200px;
+	padding-top: 110px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	height: 1000px;
+	font-size: 2em;
+}
+
+.category_backoffice {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #23282d;
+	color: white;
+	border-radius: 5px;
+}
+
+.menu_backoffice_mobile {
+	display: none;
+}
+
+
 /* Module (small content) */
 /* ...................... */
 /* ...................... */
@@ -379,6 +461,11 @@ form section {
 .button_orange:hover {
 	background-color: #55B1CD;
 }
+
+.text_tab_backoffice:hover {
+	color: #00b9eb;
+}
+
 
 /* Factored */
 /* .................... */
@@ -410,5 +497,51 @@ form section {
 /* .................... */
 
 @media screen and (max-width: 768px) {
+
+	/* BACKOFFICE */
+	.header_backoffice {
+		display: none;
+	}
+
+	/* BACKOFFICE MENU */
+	.menu_backoffice {
+		display: none;
+	}
+
+	.contain_backoffice {
+		margin-left: 0;
+		padding-right: 10px;
+	}
+
+	.menu_backoffice_mobile {
+		z-index: 3;
+		position: fixed;
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+
+	.contain_menu_backoffice_mobile {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: #23282d;
+		font-size: 2em;
+	}
+
+	.contain_menu_backoffice_mobile li {
+		margin-right: 20px;
+		border-radius: 5px;
+	}
+
+	.button_style_blue {
+		font-size: 0.8em;
+	}
+
+	/* Factored */
+	/* .................... */
+	/* .................... */
+	.contain_menu_backoffice_mobile li:hover {
+		background-color: #00b9eb;
+	}
 
 }

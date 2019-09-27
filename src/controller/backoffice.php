@@ -68,11 +68,11 @@
 				$verification = $this->login->User_information($this->pseudo ,$password_crypte, $this->connexion);
 
 				// Login information is correct
-				if($verification[0] == 1) {
-					// Check if the identifier is an admin or simple user then the stock in a variable $_SESSION
+				if($verification[0] == 1) {	
+					// Check if it's an admin or simple user then stock in a variable $_SESSION
 					$_SESSION['statut' ] = $this->login->User_statut($this->pseudo, $this->connexion);
 
-					// Stock the identifier in a variable $_SESSION
+					// Stock the user in a variable $_SESSION
 					$_SESSION['pseudo_user'] = $this->pseudo;
 
 					// Update the user ip
@@ -93,7 +93,7 @@
 	    	} // End button checked
 
 	    	// Captcha is false
-			else if(isset($captchaCheck)) {
+			else if(isset($captchaCheck) && empty($_SESSION['pseudo_user'])) {
 
 				$_SESSION['error'] = "Le code captcha n'est pas correct";
 				require('../src/view/back/backoffice_connexion_view.php');

@@ -52,7 +52,7 @@
 			
 			<!-- CV picture -->
 			<figure class="slider_picture">
-				<img src="public/images/photo/cv_picture.png">
+				<img src="public/images/photo/cv_picture.png" alt="Photo de profil">
 			</figure>
 
 			<section class="slider_information">
@@ -81,7 +81,7 @@
 
 			<div class="specific_skill">
 				<figure class="resize_image">
-					<img src="public/images/logo/html.png">
+					<img src="public/images/logo/html.png" alt="Html">
 				</figure>
 
 				<p>
@@ -125,18 +125,23 @@
 		<section class="formation" id="formation">
 			<h2>Formation</h2>
 
-			<p>
-				Logo de la formation !
-				<br>
-				2018-2019 – DEVELOPPEUR WEB JUNIOR – OPENCLASSROOM
-				<br>
-				<span>
+			<div>
+				<figure>
+					<img src="public/images/logo/openclassrooms.png" alt="OpenClassroom" class="logo_languages">
+				</figure>
+
+				<p>
+					<br>
+					<span>
+						2018-2019 – DEVELOPPEUR WEB JUNIOR – OPENCLASSROOM
+					</span>
+					<br>
 					Formation en ligne: Développeur web junior.
-				</span>
-			</p>
+				</p>
+			</div>
 		</section>
 
-		<form method="post" action="">
+		<form method="post" action="" class="form_contact">
 			<h2>Formulaire de contact</h2>
 
 			<section>
