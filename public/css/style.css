@@ -166,11 +166,6 @@ h2 {
 	text-align: center;
 }
 
-.resize_image {
-	width: 100px;
-	height: 100px;
-}
-
 meter {
 	height: 20px;
 	width: 100px;
@@ -220,7 +215,6 @@ meter {
 /* Formation */
 
 .formation {
-	height: 300px;
 	text-align: center;
 	background-color: white;
 }
@@ -242,6 +236,7 @@ meter {
 .formation div {
 	display: inline-block;
 	margin-top: 50px;
+	margin-bottom: 50px;
 	text-align: left;
 	border: 2px solid purple;
 	color: black;
@@ -335,6 +330,7 @@ meter {
 }
 
 .input_connexion_bo {
+	margin-left: 24px;
 	margin-bottom: 20px;
 	width: 85%;
 	font-size: 2em;
@@ -351,13 +347,8 @@ meter {
 	width: 85%;
 }
 
-.input_checkbox_bo {
-    height: 16px;
-    width: 16px;
-    cursor: pointer;
-}
-
 .restart_password {
+	margin-left: 24px;
 	color: #00b9eb;
 }
 
@@ -406,8 +397,11 @@ meter {
 	font-size: 1.5em;
 	background-color: #23282d;
 	color: white;
-	cursor: pointer;
 	border-top: 1px solid white;
+}
+
+.tab_backoffice a {
+	cursor: pointer;
 }
 
 .logo_tab_backoffice {
@@ -441,6 +435,28 @@ meter {
 
 .menu_backoffice_mobile {
 	display: none;
+}
+
+
+/* BACKOFFICE FORMATION */
+
+.form_formation {
+	border: 2px solid red;
+}
+
+.modify_h2 {
+	margin-top: 50px;
+	color: black;
+}
+
+.form_formation input {
+	margin-top: 10px;
+	padding: 15px;
+	display: block;
+}
+
+.modify_formation {
+	margin-bottom: 50px;
 }
 
 
@@ -489,6 +505,11 @@ meter {
 	font-size: 0.9em;
 	color: white;
 	cursor: pointer;
+}
+
+.resize_image {
+	width: 100px;
+	height: 100px;
 }
 
 

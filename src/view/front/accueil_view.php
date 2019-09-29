@@ -11,7 +11,7 @@
 		<!-- Font -->
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 		<!-- Normalize -->
-		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+		<!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
 		<!-- Css custom -->
 		<link rel="stylesheet" href="public/css/style.css">
 	</head>
@@ -79,42 +79,51 @@
 		<section class="skill" id="competences">
 			<h2>Compétences</h2>
 
-			<div class="specific_skill">
-				<figure class="resize_image">
-					<img src="public/images/logo/html.png" alt="Html">
-				</figure>
+			
+		<?php 
 
-				<p>
-					HTML
-				</p>
+			while($informations = $requete->fetch()) {
+				?>
+				<div class="specific_skill">
+					<figure class="resize_image">
+						<img src="public/images/logo/<?php echo $informations['image'];?>" alt="language">
+					</figure>
 
-				<meter max="100" value="100">
-					0%
-				</meter>
+					<p>
+						<?php echo $informations['langage']; ?>
+					</p>
 
-				
-			</div>
+					<meter max="100" value="<?php echo $informations['niveau']; ?>">
+						0%
+					</meter>
+				</div>
+		<?php 
+			}
+			?>
 		</section>
 
 		<section class="history">
 			<h2>Matthieu CLIO</h2>
 
 			<p>
-				Actuellement à la recherche d’un poste dans le développement web (CDD, CDI) pour 
+				Actuellement à la recherche d’un poste dans le développement web
 				<br>
+				(CDD, CDI) pour 
 				poursuivre une vrai carrière dans ce millieu.
 				<br>
 				<br>
 				Mes précédents travails, stages et alternance m’ont apporté une expérience 
 				<br>
-				professionnelle dans le domaine de la programmation, du développement web et du 
+				professionnelle principalement dans le domaine du développement web,
 				<br>
-				réseau informatique.
+				de la programmation et du réseau informatique.
 				<br>
 				<br>
-				Sportif dans l'âme, joue actuellement dans une équipe de foot en 7 vs 7 avec la FLA et
+				Sportif dans l'âme, joue actuellement dans une équipe de foot en 7 vs 7
 				<br>
-				pratique régulièrement la musculation pour rester en forme, avec comme objectif : se dépasser.
+				en paticipation avec la FLA et pratique régulièrement la musculation
+				<br>
+				pour rester en forme, avec comme objectif : se dépasser.
 			</p>
 
 			<!-- image -->

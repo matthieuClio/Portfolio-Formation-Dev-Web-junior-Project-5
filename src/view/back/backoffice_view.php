@@ -8,9 +8,8 @@
 		<header class="header_backoffice">
 			<figure class="container_img_backoffice">
 				<a href="backoffice" class="text_tab_backoffice">
-					<img src="public/images/logo/info.png" alt="livre ouvert">
+					<img src="public/images/logo/info.png" alt="Logo pc">
 				</a>
-				
 			</figure>
 		</header>
 
