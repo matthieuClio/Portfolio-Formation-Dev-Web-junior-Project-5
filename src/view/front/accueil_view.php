@@ -28,19 +28,25 @@
 
 				<li>
 					<a href="#accueil">
-						ACCUEIL
+						Accueil
 					</a>
 				</li>
 
 				<li>
 					<a href="#competences">
-						COMPETENCES
+						Compétences
 					</a>
 				</li>
 
 				<li>
 					<a href="#formation">
-						FORMATION
+						Formations
+					</a>
+				</li>
+
+				<li>
+					<a href="#contact">
+						Contact
 					</a>
 				</li>
 			</ul>
@@ -77,23 +83,20 @@
 		</header>
 
 		<section class="skill" id="competences">
-			<h2>Compétences</h2>
-
-			
+			<h2>Compétences</h2>			
 		<?php 
-
-			while($informations = $requete->fetch()) {
+			while($dataSkills = $requeteSkills->fetch()) {
 				?>
 				<div class="specific_skill">
 					<figure class="resize_image">
-						<img src="public/images/logo/<?php echo $informations['image'];?>" alt="language">
+						<img src="public/images/logo/<?php echo $dataSkills['image'];?>" alt="language">
 					</figure>
 
 					<p>
-						<?php echo $informations['langage']; ?>
+						<?php echo $dataSkills['langage']; ?>
 					</p>
 
-					<meter max="100" value="<?php echo $informations['niveau']; ?>">
+					<meter max="100" value="<?php echo $dataSkills['niveau']; ?>">
 						0%
 					</meter>
 				</div>
@@ -134,38 +137,99 @@
 		<section class="formation" id="formation">
 			<h2>Formation</h2>
 
-			<div>
-				<figure>
-					<img src="public/images/logo/openclassrooms.png" alt="OpenClassroom" class="logo_languages">
-				</figure>
+			<?php
+			while($dataFormations = $requeteFormations->fetch()) {
+			?>
+				<div>
+					<figure>
+						<img src="public/images/logo/<?php echo $dataFormations['image']; ?>" alt="logo" class="logo_languages">
+					</figure>
 
-				<p>
-					<br>
-					<span>
-						2018-2019 – DEVELOPPEUR WEB JUNIOR – OPENCLASSROOM
-					</span>
-					<br>
-					Formation en ligne: Développeur web junior.
-				</p>
-			</div>
+					<p>
+						<br>
+						<span>
+							<?php echo $dataFormations['titre']; ?>
+						</span>
+						<br>
+						<?php echo $dataFormations['description']; ?>
+					</p>
+				</div>
+			<?php
+			}
+			?>
 		</section>
 
 		<form method="post" action="" class="form_contact">
-			<h2>Formulaire de contact</h2>
+			<h2 class="form_contact_h2">Formulaire de contact</h2>
 
 			<section>
 				<input type="text" name="sujet" class="input_text" placeholder="Objet">
 				<input type="text" name="email" class="input_text" placeholder="Email">
-				Message
-				<textarea placeholder="Message" class="input_text">
-				</textarea>
+				<p>
+					Message
+				</p>
+				<textarea placeholder="Contenu" class="input_text"></textarea>
 
-				<input type="submit" name="send_form" value="Envoyer" class="button_blue">
+				<input type="submit" name="send_form" value="Envoyer" class="button_blue contact_button">
 			</section>
+
+			<!-- image -->
+			<div class="form_background">
+			</div>
 		</form>
 
-		<footer class="main_footer">
-			<h2>Footer</h2>
+		<footer class="main_footer" id="contact">
+			<section class="contact_information">
+				<h2 class="main_footer_title">
+					Contact
+				</h2>
+
+				<div class="container_mail_phone">
+					<img src="public/images/logo/email.png" alt="Email" class="icone_footer">
+					<p>
+						<span class="large_text">
+							Email :
+						</span>
+							matthieu.clio@gmail.com
+					</p>
+
+					<img src="public/images/logo/phone.png" alt="Email" class="icone_footer">
+					<p>
+						<span class="large_text">
+							Tél : 
+						</span>
+							0663908906
+					</p>
+				</div>
+			</section>
+
+			<figure>
+				<a href="https://www.facebook.com/matthieu.clio">
+					<img src="public/images/logo/facebook.png" alt="Facebook" class="rezize_logo_footer">
+					<figcaption>
+						Facebook
+					</figcaption>
+				</a>
+			</figure>
+
+			<figure>
+				<a href="https://github.com/matthieuClio">
+					<img src="public/images/logo/github.png" alt="GitHub" class="rezize_logo_footer">
+					<figcaption>
+						GitHub
+					</figcaption>
+				</a>
+			</figure>
+
+			<figure>
+				<a href="https://twitter.com/makabay1">
+					<img src="public/images/logo/twitter.png" alt="Twitter" class="rezize_logo_footer">
+					<figcaption>
+						Twitter
+					</figcaption>
+				</a>
+			</figure>
+
 		</footer>
 	</body>
 

@@ -26,13 +26,16 @@
 				</h2>
 
 				<input type="text" name="name_formation" placeholder="Date - Intitulé - Ecole" required>
-				<input type="text" name="description" placeholder="Description" required>
+				<p class="formation_p">
+					Description :
+				</p>
+				<textarea name="description"></textarea>
 				<input type="file" name="logo_formation" required>
 				<input type="submit" name="save" value="Enregistrer" class="button_blue">
 			</form>
 
 			<h2 class="modify_h2">
-				Modifier une compétence
+				Modifier une formation
 			</h2>
 
 			<?php
@@ -42,7 +45,11 @@
 						<img src="public/images/logo/<?php echo $informations['image'];?>" alt="formation" class="resize_image">
 
 						<input type="text" name="name_formation" value="<?php echo $informations['titre'];?>" required>
-						<input type="text" name="description" value="<?php echo $informations['description'];?>" required>
+
+						<textarea name="description">
+							<?php echo $informations['description'];?>
+						</textarea>
+						
 						<input type="file" name="logo_formation">
 
 						<input type="submit" name="modify_formation" value="Modifier" class="button_blue">

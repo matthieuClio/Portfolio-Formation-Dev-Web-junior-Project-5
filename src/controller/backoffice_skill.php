@@ -68,7 +68,7 @@
 
 	    function backofficeDisplaySkill() {
     		// Get informations in database
-    		$informations = $this->skillObj->Display_formation($this->connexion);
+    		$informations = $this->skillObj->Display_skill($this->connexion);
 
     		return $informations;
 	    }

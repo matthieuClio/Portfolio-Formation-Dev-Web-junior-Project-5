@@ -18,7 +18,7 @@ body {
 }
 
 a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -45,19 +45,17 @@ h2 {
 	z-index: 4;
 	position: fixed;
 	top: 0;
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	width: 100%;
-	background-color: white;
+	background-image: linear-gradient(#464646, #1E1E1E);
 	text-align: center;
 }
 
 .menu ul {
-	border: 2px solid red;
 }
 
 .logo {
-	border: 2px solid green;
 	padding-right: 50%;
 	font-family: 'Great Vibes', cursive;
 	font-size: 4em;
@@ -67,7 +65,6 @@ h2 {
 	display: inline;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: black;
 }
 
 
@@ -88,7 +85,7 @@ h2 {
 .slider_picture {
 	z-index: 3;
 	position: relative;
-	top: 100px;
+	top: 150px;
 	margin: auto;
 	max-width: 150px;
 	height: 150px;
@@ -109,14 +106,13 @@ h2 {
 
 .slider_information h1 {
 	position: relative;
-	top: 280px;
-	padding-bottom: 50px;
+	top: 350px;
 	font-size: 2.4em;
 }
 
 .slider_text_one {
 	float: left;
-	margin-top: 270px;
+	margin-top: 400px;
 	width: 50%;
 	text-align: right;
 	font-size: 2em;
@@ -124,33 +120,33 @@ h2 {
 
 .slider_text_two {
 	float: left;
-	margin-top: 270px;
+	margin-top: 400px;
 	width: 50%;
 	text-align: left;
 	font-size: 2em;
 }
 
 .button_accueil_right {
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .button_accueil_left {
-	margin-left: 10px;
+	margin-left: 20px;
 }
 
 
 /* Skill */
 
 .skill {
-	padding-bottom: 50px;
+	padding-bottom: 200px;
 	text-align: center;
 }
 
 .skill h2 {
-	padding-top: 50px;
+	padding-top: 100px;
 	margin-bottom: 50px;
 	font-size: 2.5em;
-	color: black;
+	color: #5bc0de;
 	font-weight: normal;
 }
 
@@ -177,14 +173,13 @@ meter {
 .history {
 	position: relative;
 	text-align: center;
-	height: 440px;
 }
 
 .history h2 {
 	z-index: 1;
 	position: relative;
 	top: 0;
-	padding-top: 80px;
+	padding-top: 130px;
 	padding-bottom: 20px;
 	width: 100%;
 	background-color: rgb(0, 0, 0, 0.7);
@@ -196,6 +191,7 @@ meter {
 	position: relative;
 	top: 0;
 	padding-top: 20px;
+	padding-bottom: 70px;
 	height: 300px;
 	width: 100%;
 	background-color: rgb(0, 0, 0, 0.7);
@@ -215,36 +211,44 @@ meter {
 /* Formation */
 
 .formation {
+	margin: auto;
 	text-align: center;
 	background-color: white;
 }
 
 .formation h2 {
 	padding-top: 50px;
+	padding-bottom: 50px;
 	font-size: 2.5em;
 	font-weight: normal;
-	color: black;
-}
-
-.formation figure {
-	border: 2px solid red;
-	margin: auto;
-	max-width: 70px;
-	margin-bottom: 15px;
+	color: #5bc0de;
 }
 
 .formation div {
-	display: inline-block;
-	margin-top: 50px;
+	float: left;
+	min-height: 250px;
+	width: 31%;
 	margin-bottom: 50px;
-	text-align: left;
+	margin-left: 1%;
+	margin-right: 1%;
 	border: 2px solid purple;
 	color: black;
 	font-size: 1.5em;
 
 }
 
+.formation figure {
+	border: 2px solid red;
+	margin: auto;
+	max-width: 100px;
+	margin-bottom: 15px;
+
+}
+
 .formation span {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
 	font-weight: bold;
 	color: #5bc0de;
 	border-bottom: 1px solid #5bc0de;
@@ -254,17 +258,23 @@ meter {
 /* Form */
 
 .form_contact {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	text-align: center;
 	background-color: red;
+	clear: both;
 }
 
-.form_contacth2 {
-	font-size: 2.3em;
+.form_contact_h2 {
+	z-index: 1;
+	position: relative;
+	font-size: 2.5em;
 }
 
 .form_contact section {
+	z-index: 2;
+	position: relative;
 	display: inline-block;
 	border: 5px solid purple;
 	margin-top: 50px;
@@ -273,22 +283,112 @@ meter {
 }
 
 .input_text {
+	z-index: 3;
+	position: relative;
 	display: block;
 	padding: 10px;
+	min-width: 250px;
 	margin: auto;
 	margin-bottom: 10px;
 	width: auto;
+}
+
+.form_contact textarea {
+	font-family: Verdana;
+}
+
+.form_contact p {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 1.4em;
+}
+
+.form_contact .contact_button {
+	width: 100%;
+	font-size: 1.2em;
+}
+
+.form_background {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/photo/contact.jpg) no-repeat fixed center;
 }
 
 
 /* Footer */
 
 .main_footer {
-	height: 200px;
-	background-color: black;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-image: linear-gradient(#323232, #1E1E1E);
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.7em;
 }
+
+.main_footer_title {
+	padding-bottom: 25px;
+	margin: auto;
+	width: 200px;
+	border-bottom: 1px solid #5bc0de;
+	color: #5bc0de;
+}
+
+.container_mail_phone {
+	border-bottom: 1px solid #5bc0de;
+	margin: auto;
+	width: 300px;
+	text-align: center;
+}
+
+.icone_footer {
+	width: 75px;
+	height: 75px;
+}
+
+.container_mail_phone p {
+	margin-bottom: 30px;
+}
+
+.large_text {
+	font-weight: bold;
+}
+
+.rezize_logo_footer {
+	margin-top: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+}
+
+.main_footer figure {
+	display: inline-block;
+}
+
+.main_footer figcaption {
+	color: #5bc0de;
+}
+
+.main_footer a {
+	color: #5bc0de;
+}
+
+.contact_information {
+	color: #5bc0de;
+}
+
+.contact_information h2 {
+	margin: auto;
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+	width: 200px;
+	border-bottom: 1px solid #5bc0de;
+	color: #5bc0de;
+}
+
 
 
 /* LOG BACKOFFICE */
@@ -444,15 +544,19 @@ meter {
 	border: 2px solid red;
 }
 
+.formation_p {
+	margin-top: 20px;
+}
+
 .modify_h2 {
 	margin-top: 50px;
 	color: black;
 }
 
 .form_formation input {
-	margin-top: 10px;
-	padding: 15px;
 	display: block;
+	margin-top: 10px;
+	padding: 15px;	
 }
 
 .modify_formation {
@@ -480,6 +584,13 @@ meter {
 
 .text_tab_backoffice:hover {
 	color: #00b9eb;
+}
+
+
+/* Footer */
+
+.main_footer figcaption:hover {
+	color: #96E7FF;
 }
 
 
