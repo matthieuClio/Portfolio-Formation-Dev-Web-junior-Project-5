@@ -7,9 +7,11 @@
 		<title>Portfolio Matthieu</title>
 		<meta name="description" content="Le livre Billet simple pour l'Alaska est disponible en lecture gratuite sur ce site.">
 		<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
-
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<!-- Font -->
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+
 		<!-- Normalize -->
 		<!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
 		<!-- Css custom -->
@@ -18,41 +20,44 @@
 
 	<body>
 		<!-- Menu -->
-		<nav class="menu">
-			<ul>
-				<li class="logo">
-					<a href="#accueil">
-						Matthieu CLIO
-					</a>
-				</li>
+		<header class="menu">
+			<div class="logo">
+				<a href="#history">
+					Matthieu Clio
+				</a>
+			</div>
 
-				<li>
-					<a href="#accueil">
-						Accueil
-					</a>
-				</li>
+			<nav>
+				<ul>
+					<!-- A modifier -->
+					<li>
+						<a href="#accueil">
+							Accueil
+						</a>
+					</li>
 
-				<li>
-					<a href="#competences">
-						Compétences
-					</a>
-				</li>
+					<li>
+						<a href="#competences">
+							Compétences
+						</a>
+					</li>
 
-				<li>
-					<a href="#formation">
-						Formations
-					</a>
-				</li>
+					<li>
+						<a href="#formation">
+							Formations
+						</a>
+					</li>
 
-				<li>
-					<a href="#contact">
-						Contact
-					</a>
-				</li>
-			</ul>
-		</nav>
+					<li>
+						<a href="#contact">
+							Contact
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-		<header class="slider" id="accueil">
+		<div class="slider" id="accueil">
 			<!-- Image in background -->
 			<img src="public/images/photo/dev_web.jpg" alt="ordinateur" class="slider_photo">
 			
@@ -67,20 +72,19 @@
 				</h1>
 
 				<div class="slider_text_one">
-					<a href="#competences" >
-						<input type="button" name="languages" value="Langages" class="button_blue button_accueil_right">
+					<a href="#competences" class="button_blue button_accueil_right">
+						<i class="fa fa-language"></i> Langages
 					</a>
 				</div>
 				
 
 				<div class="slider_text_two">
-					<a href="#formation">
-						<input type="button" name="languages" value="Mon parcours" class="button_orange button_accueil_left">
+					<a href="#formation" class="button_blue button_accueil_left">
+						<i class="fa fa-graduation-cap"></i> Mon parcours
 					</a>
 				</div>
-				
 			</section>
-		</header>
+		</div>
 
 		<section class="skill" id="competences">
 			<h2>Compétences</h2>			
@@ -105,7 +109,7 @@
 			?>
 		</section>
 
-		<section class="history">
+		<section class="history" id="history">
 			<h2>Matthieu CLIO</h2>
 
 			<p>
@@ -127,6 +131,13 @@
 				en paticipation avec la FLA et pratique régulièrement la musculation
 				<br>
 				pour rester en forme, avec comme objectif : se dépasser.
+				<br>
+				<br>
+				<a href="public/cv/cv_developpeur_web_matthieu_clio.pdf" download="cv_developpeur_web_matthieu_clio">
+					<button class="button_blue fa fa-user-circle">
+						CV
+					</button>
+   				</a>
 			</p>
 
 			<!-- image -->
@@ -229,8 +240,8 @@
 					</figcaption>
 				</a>
 			</figure>
-
 		</footer>
+		
+		<script src="public/js/main.js"></script>
 	</body>
-
 </html>
