@@ -1,8 +1,8 @@
 "use strict";
 
-// Popup object
+// Menu object
 // ...
-let popupObject = new Popup();
+let menuObject = new Menu();
 
-// Display the popup
-popupObject.displayPopupBackoffice();
+// Display the menu
+menuObject.menuOpen();

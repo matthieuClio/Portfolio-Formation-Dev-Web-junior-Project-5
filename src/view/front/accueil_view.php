@@ -19,37 +19,55 @@
 	</head>
 
 	<body>
-		<!-- Menu -->
+		<!-- MENU -->
 		<header class="menu">
+
+			<!-- Logo -->
 			<div class="logo">
 				<a href="#history">
 					Matthieu Clio
 				</a>
 			</div>
 
+			<!-- Tabs -->
 			<nav>
 				<ul>
-					<!-- A modifier -->
 					<li>
-						<a href="#accueil">
+						<i class="fa fa-bars" id="button_menu">
+						</i>
+					</li>
+
+					<li>
+						<a href="#accueil" class="tab_menu">
+							<i class="fa fa-home"></i>
 							Accueil
 						</a>
 					</li>
 
 					<li>
-						<a href="#competences">
+						<a href="#competences" class="tab_menu">
+							<i class="fa fa-language"></i>
 							Compétences
 						</a>
 					</li>
 
 					<li>
-						<a href="#formation">
+						<a href="#formation" class="tab_menu">
+							<i class="fa fa-graduation-cap"></i>
 							Formations
 						</a>
 					</li>
 
 					<li>
-						<a href="#contact">
+						<a href="#projets" class="tab_menu">
+							<i class="fa fa-archive"></i>
+							Projets
+						</a>
+					</li>
+
+					<li>
+						<a href="#contact" class="tab_menu">
+							<i class="fa fa-user-circle" aria-hidden="true"></i>
 							Contact
 						</a>
 					</li>
@@ -59,8 +77,9 @@
 
 		<div class="slider" id="accueil">
 			<!-- Image in background -->
+			<img src="public/images/photo/contact.jpg" alt="ordinateur" class="slider_photo_2">
 			<img src="public/images/photo/dev_web.jpg" alt="ordinateur" class="slider_photo">
-			
+
 			<!-- CV picture -->
 			<figure class="slider_picture">
 				<img src="public/images/photo/cv_picture.png" alt="Photo de profil">
@@ -76,7 +95,6 @@
 						<i class="fa fa-language"></i> Langages
 					</a>
 				</div>
-				
 
 				<div class="slider_text_two">
 					<a href="#formation" class="button_blue button_accueil_left">
@@ -92,17 +110,16 @@
 			while($dataSkills = $requeteSkills->fetch()) {
 				?>
 				<div class="specific_skill">
-					<figure class="resize_image">
-						<img src="public/images/logo/<?php echo $dataSkills['image'];?>" alt="language">
+					<figure class="resize_image middle_alignement">
+						<img src="public/images/logo/<?php echo $dataSkills['image'];?>" alt="language" >
 					</figure>
 
-					<p>
+					<p class="middle_alignement">
 						<?php echo $dataSkills['langage']; ?>
 					</p>
 
-					<meter max="100" value="<?php echo $dataSkills['niveau']; ?>">
-						0%
-					</meter>
+					<progress max="100" value="<?php echo $dataSkills['niveau']; ?>" class="middle_alignement">
+					</progress>
 				</div>
 		<?php 
 			}
@@ -130,7 +147,7 @@
 				<br>
 				en paticipation avec la FLA et pratique régulièrement la musculation
 				<br>
-				pour rester en forme, avec comme objectif : se dépasser.
+				pour rester en forme, avec comme objectif : se surpasser.
 				<br>
 				<br>
 				<a href="public/cv/cv_developpeur_web_matthieu_clio.pdf" download="cv_developpeur_web_matthieu_clio">
@@ -189,6 +206,71 @@
 			</div>
 		</form>
 
+		<article class="article_news" id="projets">
+			<h2>Projets Réalisés</h2>
+
+			<figure>
+				
+				<!-- First project -->
+				<h3>
+					<a href="http://matthieu-portfolio.epizy.com/projet1/WebAgency.html">
+						WebAgency
+					</a>
+				</h3>
+				
+				<img src="public/images/photo/projet1.png" alt="test" class="article_image article_image_one">
+
+				<figcaption>
+					Réalisation d'une maquette (HTML, CSS)
+				</figcaption>
+
+
+				<!-- Second project -->
+				<h3>
+					<a href="http://matthieu-portfolio.epizy.com/">
+						l'office du tourisme de la ville de Strasbourg !
+					</a>
+				</h3>
+				
+				<img src="public/images/photo/projet2.png" alt="test" class="article_image article_image_two">
+
+				<figcaption>
+						Création d'un site de tourisme de la ville de strasbourg
+						(Wordpress)
+				</figcaption>
+
+				
+				<!-- third project -->
+				<h3>
+					<a href="http://matthieu-portfolio.epizy.com/projet3/">
+						Bike Renting
+					</a>
+				</h3>
+				
+				<img src="public/images/photo/projet3.png" alt="Projet3" class="article_image article_image_tree">
+
+				<figcaption>
+					Site de location de vélo avec une API en temps réel
+					(JavaScript)
+				</figcaption>
+
+
+				<!-- Fourth project -->
+				<h3>
+					<a href="http://makabays.alwaysdata.net/">
+						Blog écrivain
+					</a>
+				</h3>
+				
+				<img src="public/images/photo/projet4.png" alt="test" class="article_image article_image_four">
+
+				<figcaption>
+					Blog permettant de lire des chapitres d'un livre réalisé par un auteur
+					(Php)
+				</figcaption>
+			</figure>
+		</article>
+
 		<footer class="main_footer" id="contact">
 			<section class="contact_information">
 				<h2 class="main_footer_title">
@@ -242,6 +324,7 @@
 			</figure>
 		</footer>
 		
+		<script src="public/js/class/Menu.js"></script>
 		<script src="public/js/main.js"></script>
 	</body>
 </html>

@@ -45,8 +45,6 @@
 					<div class="container_checkbox">
 						<input type="submit" name="submit_connexion" value="Connexion" class=" button_blue">
 					</div>
-
-					<a href="reinitialiser-mot-de-passe" class="restart_password">Mot de passe oublié ?</a>
 				</form>
 
 				<div class="error_bo">

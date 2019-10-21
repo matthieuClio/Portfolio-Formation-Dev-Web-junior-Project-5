@@ -41,6 +41,12 @@
 		</li>
 
 		<li>
+			<a href="backoffice/formation" class="text_tab_backoffice">
+				<img src="public/images/logo/formation.png" alt="Icone formation" class="logo_tab_backoffice">
+			</a>
+		</li>
+
+		<li>
 			<form method="post" action="backoffice">
 				<input type="submit" name="disconnection_back" class="button_blue" value="Deconnexion">
 			</form>
