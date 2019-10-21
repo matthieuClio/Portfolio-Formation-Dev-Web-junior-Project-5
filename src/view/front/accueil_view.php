@@ -77,7 +77,7 @@
 
 		<div class="slider" id="accueil">
 			<!-- Image in background -->
-			<img src="public/images/photo/contact.jpg" alt="ordinateur" class="slider_photo_2">
+			<img src="public/images/photo/contact.jpg" alt="lighting" class="slider_photo_2">
 			<img src="public/images/photo/dev_web.jpg" alt="ordinateur" class="slider_photo">
 
 			<!-- CV picture -->
@@ -204,13 +204,15 @@
 			<!-- image -->
 			<div class="form_background">
 			</div>
+
+			<div class="form_background_two">
+			</div>
 		</form>
 
 		<article class="article_news" id="projets">
 			<h2>Projets Réalisés</h2>
 
 			<figure>
-				
 				<!-- First project -->
 				<h3>
 					<a href="http://matthieu-portfolio.epizy.com/projet1/WebAgency.html">
