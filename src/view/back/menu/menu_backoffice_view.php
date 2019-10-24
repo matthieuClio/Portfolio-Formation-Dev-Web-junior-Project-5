@@ -18,6 +18,11 @@
 		</li>
 
 		<li class="tab_backoffice">
+			<i class="fa fa-archive "></i>
+			<a href="backoffice/projet" class="text_tab_backoffice">Projets</a>
+		</li>
+
+		<li class="tab_backoffice">
 			<form method="post" action="backoffice">
 				<input type="submit" name="disconnection_back" class="button_blue" value="Deconnexion">
 			</form>

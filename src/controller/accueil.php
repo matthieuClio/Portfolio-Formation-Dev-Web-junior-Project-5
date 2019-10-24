@@ -2,12 +2,14 @@
 	require('../core/Bdd_connexion.php');
 	require('../src/model/Skill.php');
 	require('../src/model/Formation.php');
+	require('../src/model/Project.php');
 
 	class BackofficeAccueil {
 		// Property
 		private $bddObj;
 		private $skillObj;
 		private $formationObj;
+		private $projectObj;
 		private $connexion;
 
 		// Constructor
@@ -16,6 +18,7 @@
 		 	$this->bddObj = new bdd_connexion();
 		 	$this->skillObj = new Skill();
 		 	$this->formationObj = new Formation();
+		 	$this->projectObj = new Project();
 
 		 	$this->connexion = $this->bddObj->Start();
 	    }
@@ -34,6 +37,13 @@
 	    	return $informations;
 	    }
 
+	    function homeProject() {
+	    	// Get the informations in database
+	    	$informations = $this->projectObj->Display_project($this->connexion);
+
+	    	return $informations;
+	    }
+
 	} // End class BackofficeBillet
 
 
@@ -45,6 +55,9 @@
 
 	// Informations of formation
 	$requeteFormations = $objectBackofficeAccueil->homeFormation();
+
+	// Informations of formation
+	$requeteProjects = $objectBackofficeAccueil->homeProject();
 
 	// Load the view
 	require('../src/view/front/accueil_view.php');

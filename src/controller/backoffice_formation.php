@@ -73,10 +73,10 @@
     		return $informations;
 		}
 
-	} // End class BackofficeBillet
+	} // End class BackofficeFormation
 
 
-	// Object BackofficeBillet
+	// Object BackofficeFormation
 	$objectBackofficeFormation = new BackofficeFormation();
 
 	// Add formation

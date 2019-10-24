@@ -6,6 +6,10 @@
 	<meta name="description" content="Protfolio développeur web de Matthieu CLIO">
 	<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
 
+	<!-- Font-awesome -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 	<!-- Normalize -->

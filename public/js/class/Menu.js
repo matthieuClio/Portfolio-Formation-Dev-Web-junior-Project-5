@@ -4,7 +4,7 @@ class Menu {
 
 	constructor() {
 		// Button
-		this.menuButtonElt = document.getElementById("button_menu");
+		this.ulContainerElt = document.querySelector("ul");
 		
 		// Container
 		this.containerElt = document.querySelectorAll(".tab_menu");
@@ -14,11 +14,11 @@ class Menu {
 	}
 
 	menuOpen() {
-		// Check if menuButtonElt exist
-		if(this.menuButtonElt) {
+		// Check if ulContainerElt exist
+		if(this.ulContainerElt) {
 
-			// Check if menuButtonElt is click
-			this.menuButtonElt.addEventListener("click", (evenement) =>{
+			// Check if ulContainerElt is click
+			this.ulContainerElt.addEventListener("click", (evenement) =>{
 
 				// Define variables
 				let nbElement = this.containerElt.length;
@@ -26,28 +26,35 @@ class Menu {
 
 				// Open the menu
 				if(!this.enableMenu) {
-
 					// Define a style for all elements in containerElt
 					while(count < nbElement) {
 						this.containerElt[count].style.display = "block";
 						count++;
 					}
+
+					this.ulContainerElt.style.marginLeft = "0";
+					this.ulContainerElt.style.width = "50%";
 					this.enableMenu = true;
+					
 				}
 
 				// Close the menu
 				else if(this.enableMenu) {
-
+					
 					// Define a style for all elements in containerElt
 					while(count < nbElement) {
 						this.containerElt[count].style.display = "none";
 						count++;
 					}
+
+					this.ulContainerElt.style.marginLeft = "40%";
+					this.ulContainerElt.style.width = "10%";
 					this.enableMenu = false;
 				}
-
-			});
+			}); // End evenement
 		}
-	}	// End nameFunction 
+	}	// End menuOpen
+
+	
 
 }// End class Menu

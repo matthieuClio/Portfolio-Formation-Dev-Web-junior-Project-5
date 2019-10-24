@@ -77,7 +77,8 @@ h2 {
 
 .menu ul {
 	float: left;
-	width: 50%;
+	margin-left:40%;
+	width: 10%;
 	text-align: right;
 }
 
@@ -661,7 +662,7 @@ progress::-webkit-progress-value {
 /* BACKOFFICE FORMATION */
 
 .form_formation {
-	border: 2px solid red;
+	margin-top: 100px;
 }
 
 .formation_p {
@@ -682,6 +683,28 @@ progress::-webkit-progress-value {
 .modify_formation {
 	margin-bottom: 50px;
 }
+
+
+/* BACKOFFICE FORMATION */
+
+.form_project {
+	margin-top: 100px;
+}
+
+.form_project input {
+	display: block;
+	margin-top: 10px;
+	padding: 15px;	
+}
+
+.project_p {
+	margin-top: 20px;
+}
+
+.project_image {
+	width: 100%;
+}
+
 
 
 /* Module (small content) */

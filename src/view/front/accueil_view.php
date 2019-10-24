@@ -8,12 +8,16 @@
 		<meta name="description" content="Le livre Billet simple pour l'Alaska est disponible en lecture gratuite sur ce site.">
 		<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+		<!-- Font-awesome -->
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 		<!-- Font -->
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 
 		<!-- Normalize -->
 		<!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
+		
 		<!-- Css custom -->
 		<link rel="stylesheet" href="public/css/style.css">
 	</head>
@@ -213,63 +217,24 @@
 			<h2>Projets Réalisés</h2>
 
 			<figure>
-				<!-- First project -->
-				<h3>
-					<a href="http://matthieu-portfolio.epizy.com/projet1/WebAgency.html">
-						WebAgency
-					</a>
-				</h3>
-				
-				<img src="public/images/photo/projet1.png" alt="test" class="article_image article_image_one">
+				<!-- Projects -->
+				<?php 
+					while ($projects = $requeteProjects->fetch()) {
+					?>
+						<h3>
+							<a href="<?php echo $projects['lien']; ?>">
+								<?php echo $projects['titre']; ?>
+							</a>
+						</h3>
+						
+						<img src="public/images/photo/<?php echo $projects['image']; ?>" alt="image_projet" class="article_image article_image_one">
 
-				<figcaption>
-					Réalisation d'une maquette (HTML, CSS)
-				</figcaption>
+						<figcaption>
+							<?php echo $projects['description']; ?>
+						</figcaption>
+					<?php
+					} ?>
 
-
-				<!-- Second project -->
-				<h3>
-					<a href="http://matthieu-portfolio.epizy.com/">
-						l'office du tourisme de la ville de Strasbourg !
-					</a>
-				</h3>
-				
-				<img src="public/images/photo/projet2.png" alt="test" class="article_image article_image_two">
-
-				<figcaption>
-						Création d'un site de tourisme de la ville de strasbourg
-						(Wordpress)
-				</figcaption>
-
-				
-				<!-- third project -->
-				<h3>
-					<a href="http://matthieu-portfolio.epizy.com/projet3/">
-						Bike Renting
-					</a>
-				</h3>
-				
-				<img src="public/images/photo/projet3.png" alt="Projet3" class="article_image article_image_tree">
-
-				<figcaption>
-					Site de location de vélo avec une API en temps réel
-					(JavaScript)
-				</figcaption>
-
-
-				<!-- Fourth project -->
-				<h3>
-					<a href="http://makabays.alwaysdata.net/">
-						Blog écrivain
-					</a>
-				</h3>
-				
-				<img src="public/images/photo/projet4.png" alt="test" class="article_image article_image_four">
-
-				<figcaption>
-					Blog permettant de lire des chapitres d'un livre réalisé par un auteur
-					(Php)
-				</figcaption>
 			</figure>
 		</article>
 

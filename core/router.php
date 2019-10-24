@@ -13,8 +13,13 @@
 		require('../src/controller/accueil.php');
 	}
 
+	// Backoffice project page
+	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'projet' && !empty($_SESSION['pseudo_user']))
+	{
+		require('../src/controller/backoffice_project.php');
+	}
 
-	// Backoffice formation page
+	// Backoffice skill page
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'competence' && !empty($_SESSION['pseudo_user']))
 	{
 		require('../src/controller/backoffice_skill.php');
