@@ -28,7 +28,7 @@
 
 			<!-- Logo -->
 			<div class="logo">
-				<a href="#history">
+				<a href="#accueil">
 					Matthieu Clio
 				</a>
 			</div>
@@ -42,9 +42,9 @@
 					</li>
 
 					<li>
-						<a href="#accueil" class="tab_menu">
-							<i class="fa fa-home"></i>
-							Accueil
+						<a href="#history" class="tab_menu">
+							<i class="fa fa-address-book"></i>
+							Matthieu
 						</a>
 					</li>
 
@@ -86,7 +86,9 @@
 
 			<!-- CV picture -->
 			<figure class="slider_picture">
-				<img src="public/images/photo/cv_picture.png" alt="Photo de profil">
+				<a href="#history">
+					<img src="public/images/photo/cv_picture.png" alt="Photo de profil">
+				</a>
 			</figure>
 
 			<section class="slider_information">
@@ -101,8 +103,8 @@
 				</div>
 
 				<div class="slider_text_two">
-					<a href="#formation" class="button_blue button_accueil_left">
-						<i class="fa fa-graduation-cap"></i> Mon parcours
+					<a href="#projets" class="button_blue button_accueil_left">
+						<i class="fa fa-graduation-cap"></i> Projets
 					</a>
 				</div>
 			</section>
@@ -137,7 +139,7 @@
 				Actuellement à la recherche d’un poste dans le développement web
 				<br>
 				(CDD, CDI) pour 
-				poursuivre une vrai carrière dans ce millieu.
+				poursuivre ma carrière de développeur web.
 				<br>
 				<br>
 				Mes précédents travails, stages et alternance m’ont apporté une expérience 
@@ -191,32 +193,10 @@
 			?>
 		</section>
 
-		<form method="post" action="" class="form_contact">
-			<h2 class="form_contact_h2">Formulaire de contact</h2>
-
-			<section>
-				<input type="text" name="sujet" class="input_text" placeholder="Objet">
-				<input type="text" name="email" class="input_text" placeholder="Email">
-				<p>
-					Message
-				</p>
-				<textarea placeholder="Contenu" class="input_text"></textarea>
-
-				<input type="submit" name="send_form" value="Envoyer" class="button_blue contact_button">
-			</section>
-
-			<!-- image -->
-			<div class="form_background">
-			</div>
-
-			<div class="form_background_two">
-			</div>
-		</form>
-
-		<article class="article_news" id="projets">
+		<article class="article_news">
 			<h2>Projets Réalisés</h2>
 
-			<figure>
+			<figure id="projets">
 				<!-- Projects -->
 				<?php 
 					while ($projects = $requeteProjects->fetch()) {
@@ -234,11 +214,32 @@
 						</figcaption>
 					<?php
 					} ?>
-
 			</figure>
 		</article>
 
 		<footer class="main_footer" id="contact">
+			<!-- Background image -->
+			<div class="form_background">
+			</div>
+
+			<div class="form_background_two">
+			</div>
+	
+			<form method="post" action="" class="form_contact">
+				<h2 class="form_contact_h2">Formulaire de contact</h2>
+
+				<section>
+					<input type="text" name="sujet" class="input_text" placeholder="Objet">
+					<input type="text" name="email" class="input_text" placeholder="Email">
+					<p>
+						Message
+					</p>
+					<textarea placeholder="Contenu" class="input_text"></textarea>
+
+					<input type="submit" name="send_form" value="Envoyer" class="button_blue contact_button">
+				</section>
+			</form>
+
 			<section class="contact_information">
 				<h2 class="main_footer_title">
 					Contact
@@ -250,7 +251,8 @@
 						<span class="large_text">
 							Email :
 						</span>
-							matthieu.clio@gmail.com
+						<br>
+						matthieu.clio@gmail.com
 					</p>
 
 					<img src="public/images/logo/phone.png" alt="Email" class="icone_footer">
@@ -258,37 +260,49 @@
 						<span class="large_text">
 							Tél : 
 						</span>
-							0663908906
+						<br>
+						0663908906
+					</p>
+
+					<p>
+						<img src="public/images/logo/eiffel.png" alt="tour eiffel" class="locaton_picture">
+						<span class="large_text">
+							Localisation : 
+						</span>
+						<br>
+						Paris 13
 					</p>
 				</div>
 			</section>
 
-			<figure>
-				<a href="https://www.facebook.com/matthieu.clio">
-					<img src="public/images/logo/facebook.png" alt="Facebook" class="rezize_logo_footer">
-					<figcaption>
-						Facebook
-					</figcaption>
-				</a>
-			</figure>
+			<div class="social_network">
+				<figure>
+					<a href="https://www.facebook.com/matthieu.clio">
+						<img src="public/images/logo/facebook.png" alt="Facebook" class="rezize_logo_footer">
+						<figcaption>
+							Facebook
+						</figcaption>
+					</a>
+				</figure>
 
-			<figure>
-				<a href="https://github.com/matthieuClio">
-					<img src="public/images/logo/github.png" alt="GitHub" class="rezize_logo_footer">
-					<figcaption>
-						GitHub
-					</figcaption>
-				</a>
-			</figure>
+				<figure>
+					<a href="https://github.com/matthieuClio">
+						<img src="public/images/logo/github.png" alt="GitHub" class="rezize_logo_footer">
+						<figcaption>
+							GitHub
+						</figcaption>
+					</a>
+				</figure>
 
-			<figure>
-				<a href="https://twitter.com/makabay1">
-					<img src="public/images/logo/twitter.png" alt="Twitter" class="rezize_logo_footer">
-					<figcaption>
-						Twitter
-					</figcaption>
-				</a>
-			</figure>
+				<figure>
+					<a href="https://twitter.com/makabay1">
+						<img src="public/images/logo/twitter.png" alt="Twitter" class="rezize_logo_footer">
+						<figcaption>
+							Twitter
+						</figcaption>
+					</a>
+				</figure>
+			</div>
 		</footer>
 		
 		<script src="public/js/class/Menu.js"></script>
