@@ -53,6 +53,9 @@
 						<input type="file" name="logo_formation">
 
 						<input type="submit" name="modify_formation" value="Modifier" class="button_blue">
+
+						<input type="submit" name="delete_formation" value="Supprimer" class="button_red">
+						
 						<input type="hidden" name="id" value="<?php echo $informations['id'];?>">
 					</form>
 			<?php

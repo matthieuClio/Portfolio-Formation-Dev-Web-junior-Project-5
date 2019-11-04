@@ -27,5 +27,11 @@
 			$requete = $connexion->prepare('UPDATE projet SET titre = ?, lien = ?, description = ? WHERE id = ? ');
 			$requete->execute(array($titleProject, $lienProject, $description, $id));
 		}
+
+		public function Delete_project($id, $connexion)
+		{
+			$requete = $connexion->prepare('DELETE FROM projet WHERE id = ? ');
+			$requete->execute(array($id));
+		}
 	}
 ?>

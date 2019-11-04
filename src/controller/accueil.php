@@ -11,6 +11,10 @@
 		private $formationObj;
 		private $projectObj;
 		private $connexion;
+		private $mailSubject;
+		private $mailAdress;
+		private $mailText;
+		private $buttonSendEmail;
 
 		// Constructor
 		function __construct() {
@@ -21,6 +25,22 @@
 		 	$this->projectObj = new Project();
 
 		 	$this->connexion = $this->bddObj->Start();
+
+		 	if(!empty($_POST['subject'])) {
+		 		$this->mailSubject = $_POST['subject'];
+		 	}
+
+		 	if(!empty($_POST['email'])) {
+		 		$this->mailAdress = $_POST['email'];
+		 	}
+
+		 	if(!empty($_POST['mail_text'])) {
+		 		$this->mailAdress = $_POST['mail_text'];
+		 	}
+
+		 	if(!empty($_POST['send_form'])) {
+		 		$this->buttonSendEmail = $_POST['send_form'];
+		 	}
 	    }
 
 	    function homeSkill() {
@@ -44,6 +64,19 @@
 	    	return $informations;
 	    }
 
+	    function homeEmail() {
+	    	if(!empty($this->buttonSendEmail)) {
+
+	    		// Send a email
+	    		$to = 'matthieu.clio@gmail.com';
+		    	$subject = $this->mailSubject;
+		    	$textEmail = $this->mailText;
+		    	$from = $this->mailAdress;
+
+	    		mail($to, $subject, $textEmail, $from);
+	    	}
+		}
+
 	} // End class BackofficeBillet
 
 
@@ -58,6 +91,10 @@
 
 	// Informations of formation
 	$requeteProjects = $objectBackofficeAccueil->homeProject();
+
+	// Send email
+	$objectBackofficeAccueil->homeEmail();
+
 
 	// Load the view
 	require('../src/view/front/accueil_view.php');

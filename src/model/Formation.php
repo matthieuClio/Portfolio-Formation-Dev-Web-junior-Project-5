@@ -27,5 +27,11 @@
 			$requete = $connexion->prepare('UPDATE formation SET titre = ?, description = ? WHERE id = ? ');
 			$requete->execute(array($nameFormation, $description, $id));
 		}
+
+		public function Delete_formation($id, $connexion)
+		{
+			$requete = $connexion->prepare('DELETE FROM formation WHERE id = ? ');
+			$requete->execute(array($id));
+		}
 	}
 ?>

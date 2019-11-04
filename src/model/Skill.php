@@ -28,5 +28,11 @@
 			$requete->execute(array($language, $level, $id));
 		}
 
+		public function Delete_skill($id, $connexion)
+		{
+			$requete = $connexion->prepare('DELETE FROM competence WHERE id = ? ');
+			$requete->execute(array($id));
+		}
+
 	} // End class competence
 ?>

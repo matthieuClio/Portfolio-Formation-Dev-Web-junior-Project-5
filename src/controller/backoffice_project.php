@@ -12,6 +12,8 @@
 		private $description;
 		private $file;
 		private $saveButton;
+		private $modifyButton;
+		private $deleteButton;
 		private $id;
 
 		// Constructor
@@ -45,6 +47,10 @@
 				$this->modifyButton = $_POST['modify_formation'];
 			}
 
+			if(!empty($_POST['delete_formation'])) {
+				$this->deleteButton = $_POST['delete_formation'];
+			}
+
 			if(!empty($_POST['id'])) {
 				$this->id = $_POST['id'];
 			}
@@ -71,6 +77,13 @@
     		}
 		}
 
+		function backofficeDeleteProject() {
+			// Delete a formation
+    		if(!empty($this->deleteButton) && !empty($this->id)) {
+    			$this->projectObj->Delete_project( $this->id, $this->connexion);
+    		}
+		}
+
 		function backofficeDisplayProject() {
 			// Get informations in database
     		$informations = $this->projectObj->Display_project($this->connexion);
@@ -89,6 +102,9 @@
 
 	// Modify formation
 	$objectBackofficeProject->backofficeModifyProject();
+
+	// Delete formation
+	$objectBackofficeProject->backofficeDeleteProject();
 
 	// Display all formations
 	$requete = $objectBackofficeProject->backofficeDisplayProject();

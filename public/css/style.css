@@ -18,6 +18,21 @@
 	}
 }
 
+@keyframes spire {
+
+	0% {
+
+		color: #5bc0de;
+	}
+	55% {
+		color: white;
+	}
+	100% {
+
+		color: #5bc0de;
+	}
+}
+
 
 /* Base */
 /* .... */
@@ -150,7 +165,6 @@ h2 {
 	margin: auto;
 	max-width: 310px;
 	font-size: 2.4em;
-	border-bottom: 1px solid #5bc0de;
 }
 
 .slider_text_one {
@@ -208,7 +222,6 @@ h2 {
 
 .skill p {
 	width: 100px;
-	color: black;
 	font-size: 1.5em;
 	text-align: center;
 }
@@ -289,13 +302,12 @@ progress::-webkit-progress-value {
 
 .formation h2 {
 	padding-top: 50px;
-	padding-bottom: 50px;
 	font-size: 2.5em;
 	font-weight: normal;
 	color: #5bc0de;
 }
 
-.formation div {
+.container_formation {
 	float: left;
 	padding-bottom: 30px;
 	width: 31%;
@@ -308,7 +320,7 @@ progress::-webkit-progress-value {
 }
 
 .formation figure {
-	border: 1px solid gray;
+	overflow: hidden;
 	border-radius: 5px;
 	margin: auto;
 	max-width: 100px;
@@ -317,7 +329,7 @@ progress::-webkit-progress-value {
 
 }
 
-.formation span {
+.formation_title {
 	display: inline-block;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
@@ -336,10 +348,17 @@ progress::-webkit-progress-value {
 }
 
 .article_news h2 {
-	margin-bottom: 75px;
 	font-size: 2.5em;
 	color: #5bc0de;
 	font-weight: normal;
+}
+
+.container_article {
+	padding-right: 1%;
+	padding-left: 1%;
+	float: left;
+	width: 48%;
+	min-height: 350px;
 }
 
 .article_news h3 {
@@ -371,8 +390,9 @@ progress::-webkit-progress-value {
 /* Form */
 
 .main_footer {
+	clear: both;
 	position: relative;
-	padding-bottom: 50px;²
+	padding-bottom: 50px;
 	text-align: center;
 	font-size: 1.7em;
 }
@@ -387,6 +407,7 @@ progress::-webkit-progress-value {
 
 .form_contact_h2 {
 	position: relative;
+	margin-bottom: 50px;
 	font-size: 1.7em;
 }
 
@@ -410,6 +431,7 @@ progress::-webkit-progress-value {
 }
 
 .form_contact textarea {
+	height: 150px;
 	font-family: Verdana;
 }
 
@@ -476,13 +498,15 @@ progress::-webkit-progress-value {
 }
 
 .container_mail_phone {
+	border: 2px solid red;
 	border-bottom: 1px solid #5bc0de;
 	margin: auto;
-	width: 300px;
+	width: auto;
 	text-align: center;
 }
 
 .icone_footer {
+	border: 2px solid purple;
 	width: 75px;
 	height: 75px;
 }
@@ -741,8 +765,14 @@ progress::-webkit-progress-value {
 
 .button_blue:hover {
 	background-color: transparent;
-	color: white;
+	color: #55B1CD;
 	border: 2px solid #55B1CD;
+}
+
+.button_red:hover {
+	background-color: transparent;
+	color: #D74227;
+	border: 2px solid #D74227;
 }
 
 .button_orange:hover {
@@ -794,6 +824,18 @@ progress::-webkit-progress-value {
 	transition: 0.5s;
 }
 
+.button_red {
+	padding: 15px;
+	width: 150px;
+	background-color: #F14A2C;
+	border: none;
+	border-radius: 100px;
+	font-size: 0.9em;
+	color: white;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
 .resize_image {
 	width: 100px;
 	height: 100px;
@@ -803,6 +845,22 @@ progress::-webkit-progress-value {
 	margin: auto;
 }
 
+.color_blue {
+	color: #5bc0de;
+	font-weight: bold;
+}
+
+.design_spire {
+	margin: auto;
+	width: 30px;
+	font-size: 1.8em;
+	color: #5bc0de;
+	animation: 3s spire infinite;
+}
+
+.space_bottom {
+	margin-bottom: 50px;
+}
 
 
 /* TABLET VERSION */
@@ -906,6 +964,7 @@ progress::-webkit-progress-value {
 		padding-bottom: 100px;
 	}
 
+
 	/* Formation */
 	.formation div {
 		width: 100%;
@@ -914,8 +973,12 @@ progress::-webkit-progress-value {
 	}
 
 
-	/* Projects */
+	/* Projects (aricle) */
 	.article_image {
+		width: 100%;
+	}
+
+	.article_news div {
 		width: 100%;
 	}
 

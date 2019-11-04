@@ -11,6 +11,8 @@
 		private $description;
 		private $file;
 		private $saveButton;
+		private $modifyButton;
+		private $deleteButton;
 		private $id;
 
 		// Constructor
@@ -18,8 +20,7 @@
 			$this->bddObj = new bdd_connexion();
 			$this->formationObj = new Formation();
 			$this->connexion = $this->bddObj->Start();
-
-
+			
 			if(!empty($_POST['name_formation'])) {
 				$this->nameFormation = $_POST['name_formation'];
 			}
@@ -38,6 +39,10 @@
 
 			if(!empty($_POST['modify_formation'])) {
 				$this->modifyButton = $_POST['modify_formation'];
+			}
+
+			if(!empty($_POST['delete_formation'])) {
+				$this->deleteButton = $_POST['delete_formation'];
 			}
 
 			if(!empty($_POST['id'])) {
@@ -66,6 +71,13 @@
     		}
 		}
 
+		function backofficeDeleteFormation() {
+			// Delete a formation
+    		if(!empty($this->deleteButton) && !empty($this->id)) {
+    			$this->formationObj->Delete_formation($this->id, $this->connexion);
+    		}
+		}
+
 		function backofficeDisplayFormation() {
 			// Get informations in database
     		$informations = $this->formationObj->Display_formation($this->connexion);
@@ -84,6 +96,9 @@
 
 	// Modify formation
 	$objectBackofficeFormation->backofficeModifyFormation();
+
+	// Delete formation
+	$objectBackofficeFormation->backofficeDeleteFormation();
 
 	// Display all formations
 	$requete = $objectBackofficeFormation->backofficeDisplayFormation();

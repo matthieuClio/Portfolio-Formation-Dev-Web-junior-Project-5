@@ -12,6 +12,8 @@
 		private $file;
 		private $id;
 		private $saveButton;
+		private $modifyButton;
+		private $deleteButton;
 
 		// Constructor
 		function __construct() {
@@ -40,6 +42,10 @@
 				$this->modifyButton = $_POST['modify_skill'];
 			}
 
+			if(!empty($_POST['delete_skill'])) {
+				$this->deleteButton = $_POST['delete_skill'];
+			}
+
 			if(!empty($_POST['id'])) {
 				$this->id = $_POST['id'];
 			}
@@ -66,13 +72,20 @@
     		}
 	    }
 
+	    function backofficeDeleteSkill() {
+    		// Delete a formation
+    		if(!empty($this->deleteButton) && !empty($this->id)) {
+
+	    		$this->skillObj->Delete_skill($this->id, $this->connexion);
+    		}
+	    }
+
 	    function backofficeDisplaySkill() {
     		// Get informations in database
     		$informations = $this->skillObj->Display_skill($this->connexion);
 
     		return $informations;
 	    }
-
 
 
 	} // End class BackofficeBillet
@@ -86,6 +99,9 @@
 
 	// Modify a formation
 	$objectBackofficeSkill->backofficeModifySkill();
+
+	// Delete a formation
+	$objectBackofficeSkill->backofficeDeleteSkill();
 
 	// Display all formations
 	$requete = $objectBackofficeSkill->backofficeDisplaySkill();

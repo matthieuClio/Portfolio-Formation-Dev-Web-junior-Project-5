@@ -49,6 +49,8 @@
 
 							<input type="submit" name="modify_skill" value="Modifier" class="button_blue modify_skill">
 
+							<input type="submit" name="delete_skill" value="Supprimer" class="button_red modify_skill">
+
 							<input type="hidden" name="id" value="<?php echo $informations['id'];?>">
 
 						</form>

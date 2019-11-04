@@ -120,12 +120,16 @@
 						<img src="public/images/logo/<?php echo $dataSkills['image'];?>" alt="language" >
 					</figure>
 
-					<p class="middle_alignement">
-						<?php echo $dataSkills['langage']; ?>
-					</p>
+						<p class="middle_alignement">
+							<?php echo $dataSkills['langage']; ?>
+						</p>
 
 					<progress max="100" value="<?php echo $dataSkills['niveau']; ?>" class="middle_alignement">
 					</progress>
+
+					<p class="middle_alignement color_blue">
+						<?php echo $dataSkills['niveau']; ?>%
+					</p>
 				</div>
 		<?php 
 			}
@@ -156,10 +160,8 @@
 				pour rester en forme, avec comme objectif : se surpasser.
 				<br>
 				<br>
-				<a href="public/cv/cv_developpeur_web_matthieu_clio.pdf" download="cv_developpeur_web_matthieu_clio">
-					<button class="button_blue fa fa-user-circle">
-						CV
-					</button>
+				<a href="public/cv/cv_developpeur_web_matthieu_clio.pdf" download="cv_developpeur_web_matthieu_clio" class="button_blue fa fa-user-circle">
+					CV
    				</a>
 			</p>
 
@@ -171,22 +173,29 @@
 		<section class="formation" id="formation">
 			<h2>Formation</h2>
 
+			<!-- Spire design -->
+			<div class="design_spire">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<div class="design_spire space_bottom">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<!-- End Spire design -->
+
 			<?php
 			while($dataFormations = $requeteFormations->fetch()) {
 			?>
-				<div>
+				<div class="container_formation">
 					<figure>
-						<img src="public/images/logo/<?php echo $dataFormations['image']; ?>" alt="logo" class="logo_languages">
+						<img src="public/images/logo/<?php echo $dataFormations['image']; ?>" alt="logo">
 					</figure>
 
-					<p>
-						<br>
-						<span>
-							<?php echo $dataFormations['titre']; ?>
-						</span>
-						<br>
-						<?php echo $dataFormations['description']; ?>
-					</p>
+					<br>
+					<span class="formation_title">
+						<?php echo $dataFormations['titre']; ?>
+					</span>
+					<br>
+					<?php echo $dataFormations['description']; ?>
 				</div>
 			<?php
 			}
@@ -196,22 +205,34 @@
 		<article class="article_news">
 			<h2>Projets Réalisés</h2>
 
+			<!-- Spire design -->
+			<div class="design_spire">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<div class="design_spire space_bottom">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<!-- End Spire design -->
+
 			<figure id="projets">
 				<!-- Projects -->
 				<?php 
 					while ($projects = $requeteProjects->fetch()) {
 					?>
-						<h3>
-							<a href="<?php echo $projects['lien']; ?>">
-								<?php echo $projects['titre']; ?>
-							</a>
-						</h3>
-						
-						<img src="public/images/photo/<?php echo $projects['image']; ?>" alt="image_projet" class="article_image article_image_one">
+						<div class="container_article">
+							<h3>
+								<a href="<?php echo $projects['lien']; ?>">
+									<?php echo $projects['titre']; ?>
+								</a>
+							</h3>
+							<figure>
+								<img src="public/images/photo/<?php echo $projects['image']; ?>" alt="image_projet" class="article_image article_image_one">
 
-						<figcaption>
-							<?php echo $projects['description']; ?>
-						</figcaption>
+								<figcaption>
+									<?php echo $projects['description']; ?>
+								</figcaption>
+							</figure>
+						</div>
 					<?php
 					} ?>
 			</figure>
@@ -225,16 +246,16 @@
 			<div class="form_background_two">
 			</div>
 	
-			<form method="post" action="" class="form_contact">
-				<h2 class="form_contact_h2">Formulaire de contact</h2>
-
+			<form method="post" action="accueil" class="form_contact">
 				<section>
-					<input type="text" name="sujet" class="input_text" placeholder="Objet">
+					<h2 class="form_contact_h2">Formulaire de contact</h2>
+
+					<input type="text" name="subject" class="input_text" placeholder="Objet">
 					<input type="text" name="email" class="input_text" placeholder="Email">
 					<p>
 						Message
 					</p>
-					<textarea placeholder="Contenu" class="input_text"></textarea>
+					<textarea placeholder="Contenu" name="mail_text" class="input_text"></textarea>
 
 					<input type="submit" name="send_form" value="Envoyer" class="button_blue contact_button">
 				</section>
@@ -278,28 +299,34 @@
 			<div class="social_network">
 				<figure>
 					<a href="https://www.facebook.com/matthieu.clio">
-						<img src="public/images/logo/facebook.png" alt="Facebook" class="rezize_logo_footer">
-						<figcaption>
-							Facebook
-						</figcaption>
+						<figure>
+							<img src="public/images/logo/facebook.png" alt="Facebook" class="rezize_logo_footer">
+							<figcaption>
+								Facebook
+							</figcaption>
+						</figure>
 					</a>
 				</figure>
 
 				<figure>
 					<a href="https://github.com/matthieuClio">
-						<img src="public/images/logo/github.png" alt="GitHub" class="rezize_logo_footer">
-						<figcaption>
-							GitHub
-						</figcaption>
+						<figure>
+							<img src="public/images/logo/github.png" alt="GitHub" class="rezize_logo_footer">
+							<figcaption>
+								GitHub
+							</figcaption>
+						</figure>
 					</a>
 				</figure>
 
 				<figure>
 					<a href="https://twitter.com/makabay1">
-						<img src="public/images/logo/twitter.png" alt="Twitter" class="rezize_logo_footer">
-						<figcaption>
-							Twitter
-						</figcaption>
+						<figure>
+							<img src="public/images/logo/twitter.png" alt="Twitter" class="rezize_logo_footer">
+							<figcaption>
+								Twitter
+							</figcaption>
+						</figure>
 					</a>
 				</figure>
 			</div>

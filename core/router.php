@@ -13,6 +13,12 @@
 		require('../src/controller/accueil.php');
 	}
 
+	// Home page (access by contact form)
+	else if ($url[0] == 'accueil')
+	{
+		require('../src/controller/accueil.php');
+	}
+
 	// Backoffice project page
 	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'projet' && !empty($_SESSION['pseudo_user']))
 	{
