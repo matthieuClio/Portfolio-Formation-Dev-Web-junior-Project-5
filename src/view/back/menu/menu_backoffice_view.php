@@ -3,23 +3,28 @@
 	<ul class="contain_menu_backoffice">
 		
 		<li class="tab_backoffice">
-			<img src="public/images/logo/home.png" alt="Icone accueil" class="logo_tab_backoffice">
+			<i class="fa fa-home" aria-hidden="true"></i>
 			<a href="backoffice" class="text_tab_backoffice">Accueil</a>
 		</li>
 
 		<li class="tab_backoffice">
-			<img src="public/images/logo/compte.png" alt="Icone compétence" class="logo_tab_backoffice">
+			<i class="fa fa-user-circle"></i>
 			<a href="backoffice/competence" class="text_tab_backoffice">Compétences</a>
 		</li>
 
 		<li class="tab_backoffice">
-			<img src="public/images/logo/formation.png" alt="Icone formation" class="logo_tab_backoffice">
+			<i class="fa fa-book"></i>
 			<a href="backoffice/formation" class="text_tab_backoffice">Formations</a>
 		</li>
 
 		<li class="tab_backoffice">
 			<i class="fa fa-archive "></i>
 			<a href="backoffice/projet" class="text_tab_backoffice">Projets</a>
+		</li>
+
+		<li class="tab_backoffice">
+			<i class="fa fa-handshake-o"></i>
+			<a href="backoffice/experience" class="text_tab_backoffice">Expériences</a>
 		</li>
 
 		<li class="tab_backoffice">
@@ -35,19 +40,31 @@
 	<ul class="contain_menu_backoffice_mobile">
 		<li>
 			<a href="backoffice" class="text_tab_backoffice">
-				<img src="public/images/logo/home.png" alt="Icone Accueil" class="logo_tab_backoffice">
+				<i class="fa fa-home" aria-hidden="true"></i>
+			</a>
+		</li>
+
+		<li>
+			<a href="backoffice/competence" class="text_tab_backoffice">
+				<i class="fa fa-user-circle"></i>
 			</a>
 		</li>
 
 		<li>
 			<a href="backoffice/formation" class="text_tab_backoffice">
-				<img src="public/images/logo/compte.png" alt="Icone compte" class="logo_tab_backoffice">
+				<i class="fa fa-book"></i>
 			</a>
 		</li>
 
 		<li>
-			<a href="backoffice/formation" class="text_tab_backoffice">
-				<img src="public/images/logo/formation.png" alt="Icone formation" class="logo_tab_backoffice">
+			<a href="backoffice/projet" class="text_tab_backoffice">
+				<i class="fa fa-archive "></i>
+			</a>
+		</li>
+
+		<li>
+			<a href="backoffice/experience" class="text_tab_backoffice">
+				<i class="fa fa-handshake-o"></i>
 			</a>
 		</li>
 

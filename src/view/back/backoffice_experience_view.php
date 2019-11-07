@@ -17,49 +17,50 @@
 
 		<main class="contain_backoffice">
 			<section>
-				<h1>Formation</h1>
+				<h1>Experience</h1>
 			</section>
 
-			<form method="post" action="backoffice/formation" class="form_formation" enctype="multipart/form-data">
+			<form method="post" action="backoffice/experience" class="form_formation" enctype="multipart/form-data">
 				<h2 class="modify_h2">
-					Ajouter une formation
+					Ajouter une expérience
 				</h2>
 
-				<input type="text" name="name_formation" placeholder="Date - Intitulé - Ecole" required>
-				<p class="formation_p">
+				<input type="text" name="name_experience" placeholder="Poste - Intitulé - Date" required>
+				<p class="experience_p">
 					Description :
 				</p>
 				<textarea name="description"></textarea>
-				<input type="file" name="logo_formation" required>
+				<input type="file" name="logo_experience" required>
 				<input type="submit" name="save" value="Enregistrer" class="button_blue">
 			</form>
 
 			<h2 class="modify_h2">
-				Modifier une formation
+				Modifier une expérience
 			</h2>
 
 			<?php
 				while ($informations = $requete->fetch()) {
 				?>
-					<form method="post" action="backoffice/formation" class="form_formation" enctype="multipart/form-data">
-						<img src="public/images/formation/<?php echo $informations['image'];?>" alt="formation" class="resize_image">
+					<form method="post" action="backoffice/experience" class="form_formation" enctype="multipart/form-data">
+						<img src="public/images/experience/<?php echo $informations['image'];?>" alt="expérience" class="resize_image">
 
-						<input type="text" name="name_formation" value="<?php echo $informations['titre'];?>" required>
+						<input type="text" name="name_experience" value="<?php echo $informations['titre'];?>" required>
 
 						<textarea name="description">
 							<?php echo $informations['description'];?>
 						</textarea>
 						
-						<input type="file" name="logo_formation">
+						<input type="file" name="logo_experience">
 
-						<input type="submit" name="modify_formation" value="Modifier" class="button_blue">
+						<input type="submit" name="modify_experience" value="Modifier" class="button_blue">
 
-						<input type="submit" name="delete_formation" value="Supprimer" class="button_red">
+						<input type="submit" name="delete_experience" value="Supprimer" class="button_red">
 						
 						<input type="hidden" name="id" value="<?php echo $informations['id'];?>">
 					</form>
 			<?php
 				} ?>
+
 		</main>
 
 	</body>

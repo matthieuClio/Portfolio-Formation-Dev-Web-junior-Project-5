@@ -20,7 +20,7 @@
 				<h1>Projet</h1>
 			</section>
 
-			<form method="post" action="backoffice/projet" class="form_project">
+			<form method="post" action="backoffice/projet" class="form_project" enctype="multipart/form-data">
 				<h2 class="modify_h2">
 					Ajouter un projet
 				</h2>
@@ -50,8 +50,8 @@
 			<?php 
 			while ($informations = $requete->fetch()) {
 				?>
-				<form method="post" action="backoffice/projet"  class="form_project">
-					<img src="public/images/photo/<?php echo $informations['image'];?>" alt="formation" class="project_image">
+				<form method="post" action="backoffice/projet"  class="form_project" enctype="multipart/form-data">
+					<img src="public/images/projet/<?php echo $informations['image'];?>" alt="formation" class="project_image">
 
 					<input type="text" name="name_title" value="<?php echo $informations['titre'];?>" required>
 

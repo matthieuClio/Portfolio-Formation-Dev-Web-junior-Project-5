@@ -1,6 +1,7 @@
 <?php
 	require('../core/Bdd_connexion.php');
 	require('../src/model/Project.php');
+	require('../src/controller/customClass/DownloadFile.php');
 
 	class BackofficeProject {
 
@@ -11,6 +12,7 @@
 		private $lienProject;
 		private $description;
 		private $file;
+		private $target_folder;
 		private $saveButton;
 		private $modifyButton;
 		private $deleteButton;
@@ -20,8 +22,9 @@
 		function __construct() {
 			$this->bddObj = new bdd_connexion();
 			$this->projectObj = new Project();
+			$this->downloadObj = new DownloadFile();
 			$this->connexion = $this->bddObj->Start();
-
+			$this->target_folder = "../public/images/projet/";
 
 			if(!empty($_POST['name_title'])) {
 				$this->titleProject = $_POST['name_title'];
@@ -35,8 +38,8 @@
 				$this->description = $_POST['description'];
 			}
 
-			if(!empty($_POST['project_image'])) {
-				$this->file = $_POST['project_image'];
+			if(!empty($_FILES['project_image'])) {
+				$this->file = $_FILES['project_image'];
 			}
 
 			if(!empty($_POST['save'])) {
@@ -57,10 +60,13 @@
 		}
 
 		function backofficeAddProject() {
-			if(!empty($this->saveButton) && !empty($this->titleProject) && !empty($this->lienProject) && !empty($this->description) && !empty($this->file)) {
+			if(!empty($this->saveButton) && !empty($this->titleProject) && !empty($this->lienProject) && !empty($this->description) && !empty($this->file["name"])) {
 
 	    		// Insert fields in database
-	    		$this->projectObj->Add_project($this->titleProject, $this->lienProject, $this->description, $this->file, $this->connexion);
+	    		$this->projectObj->Add_project($this->titleProject, $this->lienProject, $this->description, $this->file["name"], $this->connexion);
+
+	    		// Download the file
+				$this->downloadObj->Download($this->target_folder, $this->file);
 	    	}
 		}
 
@@ -68,10 +74,14 @@
 			// Modify a formation
     		if(!empty($this->modifyButton) && !empty($this->lienProject) && !empty($this->description)) {
 
-    			if(!empty($this->file)) {
-    				$this->projectObj->Modify_project_image($this->titleProject, $this->lienProject, $this->description, $this->file, $this->id, $this->connexion);
+    			if(!empty($this->file["name"])) {
+    				$this->projectObj->Modify_project_image($this->titleProject, $this->lienProject, $this->description, $this->file["name"], $this->id, $this->connexion);
+
+    				// Download the file
+					$this->downloadObj->Download($this->target_folder, $this->file);
+					?> <script type="text/javascript"> alert('ok')</script> <?php
     			}
-    			else if(empty($this->file)) {
+    			else if(empty($this->file["name"])) {
     				$this->projectObj->Modify_project($this->titleProject, $this->lienProject, $this->description, $this->id, $this->connexion);
     			}
     		}

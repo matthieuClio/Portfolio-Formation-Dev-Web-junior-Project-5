@@ -36,6 +36,12 @@
 	{
 		require('../src/controller/backoffice_formation.php');
 	}
+
+	// Backoffice experience page
+	else if ($url[0] == 'backoffice' && !empty($url[1]) && $url[1] == 'experience' && !empty($_SESSION['pseudo_user']))
+	{
+		require('../src/controller/backoffice_experience.php');
+	}
 	
 	// Backoffice if user is connected or if he use the connexion form
 	else if ($url[0] == 'backoffice' && !empty($_SESSION['pseudo_user']) || $url[0] == 'backoffice' && !empty($_POST['submit_connexion']))
@@ -52,6 +58,6 @@
 	// 404 error page
 	else 
 	{
-		//require('../src/controller/error_page.php');
+		require('../src/controller/error_page.php');
 	}
 ?>

@@ -22,14 +22,14 @@
 
 	0% {
 
-		color: #5bc0de;
+		opacity: 1;
 	}
 	55% {
-		color: white;
+		opacity: 0;
 	}
 	100% {
 
-		color: #5bc0de;
+		opacity: 1;
 	}
 }
 
@@ -97,15 +97,49 @@ h2 {
 	text-align: right;
 }
 
-.menu i {
-	display: none;
+.menu li {
+	display: block;
+	font-size: 1.7em;
 }
 
-.menu li {
+.tab_menu {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	display: none;
+	width: 100%;
+	text-align: left;
+	border-top: 2px solid white;
+	font-size: 1.3em;
+}
+
+.menu i {
 	display: inline-block;
-	margin-right: 25px;
-	font-size: 1.7em;
-	transition: 1s;
+	color: white;
+	font-size: 1.5em;
+}
+
+
+/* Notification */
+
+.notification {
+	z-index: 4;
+	position: fixed;
+	top: 0;
+	margin-top: 80px;
+	margin-left: 20%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 60%;
+	background-color: #5bc0de;
+	text-align: center;
+	color: white;
+	font-size: 2em;
+	border-radius: 5px;
+}
+
+.notification_close {
+	cursor: pointer;
 }
 
 
@@ -199,13 +233,12 @@ h2 {
 /* Skill */
 
 .skill {
-	padding-bottom: 150px;
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .skill h2 {
 	padding-top: 100px;
-	margin-bottom: 50px;
 	font-size: 2.5em;
 	color: #5bc0de;
 	font-weight: normal;
@@ -213,11 +246,8 @@ h2 {
 
 .specific_skill {
 	display: inline-block;
-	margin-left: auto;
-    margin-right: auto;
     margin-bottom: 50px;
 	width: 20%;
-	text-align: center;
 }
 
 .skill p {
@@ -295,6 +325,7 @@ progress::-webkit-progress-value {
 
 .formation {
 	margin: auto;
+	padding-top: 50px;
 	height: 100%;
 	text-align: center;
 	background-color: white;
@@ -308,14 +339,13 @@ progress::-webkit-progress-value {
 }
 
 .container_formation {
-	float: left;
-	padding-bottom: 30px;
-	width: 31%;
-	min-height: 250px;
+	display: inline-block;
 	margin-bottom: 50px;
 	margin-left: 1%;
 	margin-right: 1%;
-	color: black;
+	padding-bottom: 30px;
+	max-width: 31%;
+	min-height: 250px;
 	font-size: 1.5em;
 }
 
@@ -326,7 +356,6 @@ progress::-webkit-progress-value {
 	max-width: 100px;
 	height: 100px;
 	margin-bottom: 15px;
-
 }
 
 .formation_title {
@@ -336,6 +365,80 @@ progress::-webkit-progress-value {
 	font-weight: bold;
 	color: #5bc0de;
 	border-bottom: 1px solid #5bc0de;
+}
+
+.description_formation {
+	display: block;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+/* Experience */
+
+.experience {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	position: relative;
+	text-align: center;
+	color: white;
+	background: url(../images/photo/tour.jpg) no-repeat fixed center;
+}
+
+.experience h2 {
+	z-index: 2;
+	position: relative;
+	font-size: 2.5em;
+}
+
+.filtered_experience {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0, 0, 0, 0.1);
+}
+
+.container_experience {
+	z-index: 2;
+	position: relative;
+	display: inline-block;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 20%;
+	height: 250px;
+	color: white;
+	border-radius: 7px;
+	background-color: rgb(0, 0, 0, 0.7);
+	overflow: hidden;
+}
+
+.container_image {
+	z-index: 2;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.experience_title {
+	z-index: 2;
+	position: relative;
+	margin-bottom: 25px;
+	font-size: 2em;
+}
+
+.description_experience {
+	font-size: 1.7em;
+}
+
+.change_color {
+	color: white;
 }
 
 
@@ -354,9 +457,7 @@ progress::-webkit-progress-value {
 }
 
 .container_article {
-	padding-right: 1%;
-	padding-left: 1%;
-	float: left;
+	display: inline-block;
 	width: 48%;
 	min-height: 350px;
 }
@@ -367,7 +468,6 @@ progress::-webkit-progress-value {
 }
 
 .article_image {
-	margin-right: 25px;
 	margin-bottom: 25px;
 	width: 60%;
 }
@@ -497,16 +597,22 @@ progress::-webkit-progress-value {
 	text-align: center;
 }
 
-.container_mail_phone {
-	border: 2px solid red;
+.information_footer {
+	display: inline-block;
+	margin-top: 25px;
+	width: 250px;
+	height: 150px;
 	border-bottom: 1px solid #5bc0de;
+	overflow: none;
+}
+
+.container_mail_phone {
 	margin: auto;
 	width: auto;
 	text-align: center;
 }
 
 .icone_footer {
-	border: 2px solid purple;
 	width: 75px;
 	height: 75px;
 }
@@ -516,11 +622,7 @@ progress::-webkit-progress-value {
 	font-size: 1.2em;
 }
 
-.locaton_picture {
-	display: block;
-	margin: auto;
-	margin-bottom: 5px;
-	width: 150px;
+.location_picture {
 	background-color: #5bc0de;
 	border-radius: 100px;
 }
@@ -543,7 +645,6 @@ progress::-webkit-progress-value {
 }
 
 .main_footer figure {
-
 	display: inline-block;
 	position: relative;
 }
@@ -731,7 +832,7 @@ progress::-webkit-progress-value {
 }
 
 
-/* BACKOFFICE FORMATION */
+/* BACKOFFICE PROJECT */
 
 .form_project {
 	margin-top: 100px;
@@ -751,6 +852,12 @@ progress::-webkit-progress-value {
 	width: 100%;
 }
 
+
+/* BACKOFFICE EXPERIENCE */
+
+.experience_p {
+	margin-top: 25px;
+}
 
 
 /* Module (small content) */
@@ -806,6 +913,10 @@ progress::-webkit-progress-value {
 	text-decoration: underline;
 }
 
+.notification_close:hover {
+	color: red;
+}
+
 
 
 /* Factored */
@@ -858,8 +969,40 @@ progress::-webkit-progress-value {
 	animation: 3s spire infinite;
 }
 
+.design_spire_color {
+	margin: auto;
+	width: 30px;
+	font-size: 1.8em;
+	color: white;
+	animation: 3s spire infinite;
+}
+
 .space_bottom {
 	margin-bottom: 50px;
+}
+
+
+/* Error page */
+/* .......... */
+
+.error_title {
+	margin-top: 200px;
+	color: #5bc0de;
+	font-size: 5em;
+	text-align: center;
+}
+
+.error_p {
+	text-align: center;
+	font-size: 2em;
+}
+
+.error_home {
+	display: block;
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 2em;
 }
 
 
@@ -877,10 +1020,6 @@ progress::-webkit-progress-value {
 		font-size: 1.5em;
 	}
 
-	.menu li {
-		display: block;
-	}
-
 	.tab_menu {
 		margin-top: 5px;
 		margin-bottom: 10px;
@@ -890,6 +1029,13 @@ progress::-webkit-progress-value {
 		text-align: left;
 		border-top: 2px solid white;
 		font-size: 1.3em;
+	}
+
+
+	/* Formation */
+
+	.container_formation {
+		max-width: 31%;
 	}
 }
 
@@ -902,6 +1048,7 @@ progress::-webkit-progress-value {
 
 	/* FRONT */
 	/* ..... */
+
 
 	/* Menu */
 
@@ -918,10 +1065,6 @@ progress::-webkit-progress-value {
 		display: inline;
 		color: white;
 		font-size: 1.5em;
-	}
-
-	.menu li {
-		display: block;
 	}
 
 	.tab_menu {
@@ -945,6 +1088,7 @@ progress::-webkit-progress-value {
 
 
 	/* Skill */
+
 	.specific_skill {
 		padding: 10px;
 		width: 35%;
@@ -956,6 +1100,7 @@ progress::-webkit-progress-value {
 
 
 	/* History */
+
 	.history {
 		height: 100%;
 	}
@@ -966,14 +1111,24 @@ progress::-webkit-progress-value {
 
 
 	/* Formation */
-	.formation div {
-		width: 100%;
+
+	.container_formation {
+		min-width: 100%;
 		margin-left: 0;
 		margin-right: 0;
 	}
 
 
+	/* Experience */
+
+	.container_experience {
+		width: 80%;
+		margin-bottom: 50px;
+	}
+
+
 	/* Projects (aricle) */
+
 	.article_image {
 		width: 100%;
 	}
@@ -984,6 +1139,7 @@ progress::-webkit-progress-value {
 
 
 	/* Contact */
+
 	.input_text {
 		min-width: 0;
 	}

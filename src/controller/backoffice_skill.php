@@ -1,6 +1,7 @@
 <?php
 	require('../core/Bdd_connexion.php');
 	require('../src/model/Skill.php');
+	require('../src/controller/customClass/DownloadFile.php');
 
 	class BackofficeSkill {
 
@@ -10,6 +11,7 @@
 		private $language;
 		private $level;
 		private $file;
+		private $target_folder;
 		private $id;
 		private $saveButton;
 		private $modifyButton;
@@ -19,8 +21,9 @@
 		function __construct() {
 			$this->bddObj = new bdd_connexion();
 			$this->skillObj = new Skill();
+			$this->downloadObj = new DownloadFile();
 			$this->connexion = $this->bddObj->Start();
-
+			$this->target_folder = "../public/images/competence/";
 
 			if(!empty($_POST['language'])) {
 				$this->language = $_POST['language'];
@@ -30,8 +33,8 @@
 				$this->level = $_POST['level'];
 			}
 
-			if(!empty($_POST['logo_language'])) {
-				$this->file = $_POST['logo_language'];
+			if(!empty($_FILES['logo_language'])) {
+				$this->file = $_FILES['logo_language'];
 			}
 
 			if(!empty($_POST['save'])) {
@@ -52,10 +55,13 @@
 	    }
 
 	    function backofficeAddSkill() {
-	    	if(!empty($this->saveButton) && !empty($this->language) && !empty($this->level) && !empty($this->file)) {
+	    	if(!empty($this->saveButton) && !empty($this->language) && !empty($this->level) && !empty($this->file["name"])) {
 
 	    		// Insert fields in database
-	    		$this->skillObj->Add_skill($this->language, $this->level, $this->file, $this->connexion);
+	    		$this->skillObj->Add_skill($this->language, $this->level, $this->file["name"], $this->connexion);
+
+	    		// Download the file
+				$this->downloadObj->Download($this->target_folder, $this->file);
 	    	}
 	    }
 
@@ -63,8 +69,11 @@
     		// Modify a formation
     		if(!empty($this->modifyButton) && !empty($this->language) && !empty($this->level)) {
 
-    			if(!empty($this->file)) {
-    				$this->skillObj->Modify_skill_image($this->language, $this->level, $this->file, $this->id, $this->connexion);
+    			if(!empty($this->file["name"])) {
+    				$this->skillObj->Modify_skill_image($this->language, $this->level, $this->file["name"], $this->id, $this->connexion);
+
+    				// Download the file
+					$this->downloadObj->Download($this->target_folder, $this->file);
     			}
     			else if(empty($this->file)) {
     				$this->skillObj->Modify_skill($this->language, $this->level, $this->id, $this->connexion);

@@ -3,6 +3,7 @@
 	require('../src/model/Skill.php');
 	require('../src/model/Formation.php');
 	require('../src/model/Project.php');
+	require('../src/model/Experience.php');
 
 	class BackofficeAccueil {
 		// Property
@@ -10,6 +11,7 @@
 		private $skillObj;
 		private $formationObj;
 		private $projectObj;
+		private $experienceObj;
 		private $connexion;
 		private $mailSubject;
 		private $mailAdress;
@@ -23,9 +25,11 @@
 		 	$this->skillObj = new Skill();
 		 	$this->formationObj = new Formation();
 		 	$this->projectObj = new Project();
-
+		 	$this->experienceObj = new Experience();
+		 	// Bdd
 		 	$this->connexion = $this->bddObj->Start();
 
+		 	// Form data
 		 	if(!empty($_POST['subject'])) {
 		 		$this->mailSubject = $_POST['subject'];
 		 	}
@@ -64,6 +68,13 @@
 	    	return $informations;
 	    }
 
+	    function homeExperience() {
+	    	// Get the informations in database
+	    	$informations = $this->experienceObj->Display_experience($this->connexion);
+
+	    	return $informations;
+	    }
+
 	    function homeEmail() {
 	    	if(!empty($this->buttonSendEmail)) {
 
@@ -74,6 +85,8 @@
 		    	$from = $this->mailAdress;
 
 	    		mail($to, $subject, $textEmail, $from);
+
+	    		$_SESSION['notification'] = "Email envoyé";
 	    	}
 		}
 
@@ -89,8 +102,11 @@
 	// Informations of formation
 	$requeteFormations = $objectBackofficeAccueil->homeFormation();
 
-	// Informations of formation
+	// Informations of project
 	$requeteProjects = $objectBackofficeAccueil->homeProject();
+
+	// Informations of experience
+	$requeteExperiences = $objectBackofficeAccueil->homeExperience();
 
 	// Send email
 	$objectBackofficeAccueil->homeEmail();

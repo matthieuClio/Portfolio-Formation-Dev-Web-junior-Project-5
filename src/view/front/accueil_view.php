@@ -16,7 +16,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 
 		<!-- Normalize -->
-		<!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
+		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 		
 		<!-- Css custom -->
 		<link rel="stylesheet" href="public/css/style.css">
@@ -70,6 +70,13 @@
 					</li>
 
 					<li>
+						<a href="#experience" class="tab_menu">
+							<i class="fa fa-handshake-o"></i>
+							Expériences
+						</a>
+					</li>
+
+					<li>
 						<a href="#contact" class="tab_menu">
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 							Contact
@@ -78,6 +85,22 @@
 				</ul>
 			</nav>
 		</header>
+
+
+		<!-- Display a notification if the email form is sended -->
+		<?php
+			if(!empty($_SESSION['notification'])) {
+
+				// Destroy the SESSION variable
+				unset($_SESSION['notification']);
+				?>
+				<div class="notification" id="container_notification">
+					Email envoyé
+					<i class="fa fa-window-close notification_close" id="button_notification"></i>
+				</div>
+				<?php
+			}
+			?>
 
 		<div class="slider" id="accueil">
 			<!-- Image in background -->
@@ -111,18 +134,28 @@
 		</div>
 
 		<section class="skill" id="competences">
-			<h2>Compétences</h2>			
+			<h2>Compétences</h2>
+
+			<!-- Spire design -->
+			<div class="design_spire">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<div class="design_spire space_bottom">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<!-- End Spire design -->
+
 		<?php 
 			while($dataSkills = $requeteSkills->fetch()) {
 				?>
 				<div class="specific_skill">
 					<figure class="resize_image middle_alignement">
-						<img src="public/images/logo/<?php echo $dataSkills['image'];?>" alt="language" >
+						<img src="public/images/competence/<?php echo $dataSkills['image'];?>" alt="language" >
 					</figure>
 
-						<p class="middle_alignement">
-							<?php echo $dataSkills['langage']; ?>
-						</p>
+					<p class="middle_alignement">
+						<?php echo $dataSkills['langage']; ?>
+					</p>
 
 					<progress max="100" value="<?php echo $dataSkills['niveau']; ?>" class="middle_alignement">
 					</progress>
@@ -187,15 +220,57 @@
 			?>
 				<div class="container_formation">
 					<figure>
-						<img src="public/images/logo/<?php echo $dataFormations['image']; ?>" alt="logo">
+						<img src="public/images/formation/<?php echo $dataFormations['image']; ?>" alt="logo">
 					</figure>
 
 					<br>
-					<span class="formation_title">
+					<div class="formation_title">
 						<?php echo $dataFormations['titre']; ?>
-					</span>
+					</div>
+
 					<br>
-					<?php echo $dataFormations['description']; ?>
+					<div class="description_formation">
+						<?php echo $dataFormations['description']; ?>
+					</div>
+					
+				</div>
+			<?php
+			}
+			?>
+		</section>
+
+		<section class="experience" id="experience">
+			<h2>Expériences Réalisés</h2>
+
+			<!-- Black filtered -->
+			<div class="filtered_experience">
+			</div>
+
+			<!-- Spire design -->
+			<div class="design_spire_color">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<div class="design_spire_color space_bottom">
+				<i class="fa fa-sort-desc"></i>
+			</div>
+			<!-- End Spire design -->
+
+			<?php
+			while($dataExperience = $requeteExperiences->fetch()) {
+			?>
+				<div class="container_experience">
+					<div class="experience_title">
+						<?php echo $dataExperience['titre']; ?>
+					</div>
+
+					<figure class="container_image">
+						<img src="public/images/experience/<?php echo $dataExperience['image']; ?>" alt="logo">
+					</figure>
+
+					<div class="description_experience">
+						<?php echo $dataExperience['description']; ?>
+					</div>
+					
 				</div>
 			<?php
 			}
@@ -214,7 +289,7 @@
 			</div>
 			<!-- End Spire design -->
 
-			<figure id="projets">
+			<div id="projets">
 				<!-- Projects -->
 				<?php 
 					while ($projects = $requeteProjects->fetch()) {
@@ -226,7 +301,7 @@
 								</a>
 							</h3>
 							<figure>
-								<img src="public/images/photo/<?php echo $projects['image']; ?>" alt="image_projet" class="article_image article_image_one">
+								<img src="public/images/projet/<?php echo $projects['image']; ?>" alt="image_projet" class="article_image article_image_one">
 
 								<figcaption>
 									<?php echo $projects['description']; ?>
@@ -235,7 +310,7 @@
 						</div>
 					<?php
 					} ?>
-			</figure>
+			</div>
 		</article>
 
 		<footer class="main_footer" id="contact">
@@ -250,12 +325,12 @@
 				<section>
 					<h2 class="form_contact_h2">Formulaire de contact</h2>
 
-					<input type="text" name="subject" class="input_text" placeholder="Objet">
-					<input type="text" name="email" class="input_text" placeholder="Email">
+					<input type="text" name="subject" class="input_text" placeholder="Objet" required>
+					<input type="text" name="email" class="input_text" placeholder="Email" required>
 					<p>
 						Message
 					</p>
-					<textarea placeholder="Contenu" name="mail_text" class="input_text"></textarea>
+					<textarea placeholder="Contenu" name="mail_text" class="input_text" required></textarea>
 
 					<input type="submit" name="send_form" value="Envoyer" class="button_blue contact_button">
 				</section>
@@ -267,32 +342,38 @@
 				</h2>
 
 				<div class="container_mail_phone">
-					<img src="public/images/logo/email.png" alt="Email" class="icone_footer">
-					<p>
-						<span class="large_text">
-							Email :
-						</span>
-						<br>
-						matthieu.clio@gmail.com
-					</p>
+					<figure class="information_footer">
+						<img src="public/images/logo/email.png" alt="Email" class="icone_footer">
+						<p>
+							<span class="large_text">
+								Email :
+							</span>
+							<br>
+							matthieu.clio@gmail.com
+						</p>
+					</figure>
+					
+					<figure class="information_footer">
+						<img src="public/images/logo/phone.png" alt="Email" class="icone_footer">
+						<p>
+							<span class="large_text">
+								Tél : 
+							</span>
+							<br>
+							0663908906
+						</p>
+					</figure>
 
-					<img src="public/images/logo/phone.png" alt="Email" class="icone_footer">
-					<p>
-						<span class="large_text">
-							Tél : 
-						</span>
-						<br>
-						0663908906
-					</p>
-
-					<p>
-						<img src="public/images/logo/eiffel.png" alt="tour eiffel" class="locaton_picture">
-						<span class="large_text">
-							Localisation : 
-						</span>
-						<br>
-						Paris 13
-					</p>
+					<figure class="information_footer">
+						<img src="public/images/logo/eiffel.png" alt="tour eiffel" class="location_picture icone_footer">
+						<p>
+							<span class="large_text">
+								Localisation : 
+							</span>
+							<br>
+							Paris 13
+						</p>
+					</figure>
 				</div>
 			</section>
 
@@ -332,6 +413,7 @@
 			</div>
 		</footer>
 		
+		<script src="public/js/class/Notification.js"></script>
 		<script src="public/js/class/Menu.js"></script>
 		<script src="public/js/main.js"></script>
 	</body>

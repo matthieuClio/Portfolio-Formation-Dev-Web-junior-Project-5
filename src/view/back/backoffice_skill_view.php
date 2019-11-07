@@ -19,7 +19,7 @@
 			<section>
 				<h1>Compétence</h1>
 
-				<form method="post" action="backoffice/competence"  class="form_formation">
+				<form method="post" action="backoffice/competence"  class="form_formation" enctype="multipart/form-data">
 					<h2 class="modify_h2">
 						Ajouter une compétence
 					</h2>
@@ -38,8 +38,8 @@
 				<?php
 					while ($informations = $requete->fetch()) {
 					?>
-						<form method="post" action="backoffice/competence"  class="form_formation">
-							<img src="public/images/logo/<?php echo $informations['image'];?>" alt="language" class="resize_image">
+						<form method="post" action="backoffice/competence"  class="form_formation" enctype="multipart/form-data">
+							<img src="public/images/competence/<?php echo $informations['image'];?>" alt="language" class="resize_image">
 
 							<input type="text" name="language" value="<?php echo $informations['langage'];?>" required>
 
