@@ -123,6 +123,7 @@ h2 {
 /* Notification */
 
 .notification {
+	display: none;
 	z-index: 4;
 	position: fixed;
 	top: 0;
@@ -378,9 +379,8 @@ progress::-webkit-progress-value {
 /* Experience */
 
 .experience {
-	padding-top: 100px;
-	padding-bottom: 100px;
 	position: relative;
+	height: 1080px;
 	text-align: center;
 	color: white;
 	background: url(../images/photo/tour.jpg) no-repeat fixed center;
@@ -389,6 +389,7 @@ progress::-webkit-progress-value {
 .experience h2 {
 	z-index: 2;
 	position: relative;
+	padding-top: 100px;
 	font-size: 2.5em;
 }
 
@@ -407,10 +408,11 @@ progress::-webkit-progress-value {
 	display: inline-block;
 	margin-left: 1%;
 	margin-right: 1%;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	width: 20%;
-	height: 250px;
+	padding: 3%;
+	padding-bottom: 120px;
+	margin-bottom: 100px;
+	width: 17%;
+	height: 200px;
 	color: white;
 	border-radius: 7px;
 	background-color: rgb(0, 0, 0, 0.7);
@@ -493,28 +495,28 @@ progress::-webkit-progress-value {
 	clear: both;
 	position: relative;
 	padding-bottom: 50px;
+	height: 1000px;
 	text-align: center;
 	font-size: 1.7em;
 }
 
 .form_contact {
 	position: relative;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 10px;
 	text-align: center;
 	clear: both;
 }
 
 .form_contact_h2 {
 	position: relative;
-	margin-bottom: 50px;
+	margin-top: 50px;
+	margin-bottom: 25px;
 	font-size: 1.7em;
 }
 
 .form_contact section {
 	position: relative;
 	display: inline-block;
-	margin-top: 50px;
 	color: white;
 }
 
@@ -531,7 +533,7 @@ progress::-webkit-progress-value {
 }
 
 .form_contact textarea {
-	height: 150px;
+	height: 70px;
 	font-family: Verdana;
 }
 
@@ -576,34 +578,29 @@ progress::-webkit-progress-value {
 	color: white;
 }
 
-.contact_information h2 {
-	margin: auto;
-	margin-bottom: 25px;
-	padding-bottom: 25px;
-	width: 200px;
-	border-bottom: 1px solid #5bc0de;
-	color: white;
-}
-
 .main_footer_title {
 	position: relative;
-	padding-top: 25px;
-	padding-bottom: 25px;
 	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	width: 200px;
+	color: white;
+	text-align: center;
 	border-top: 1px solid #5bc0de;
 	border-bottom: 1px solid #5bc0de;
-	color: #5bc0de;
-	text-align: center;
 }
+
 
 .information_footer {
 	display: inline-block;
-	margin-top: 25px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
 	width: 250px;
-	height: 150px;
+	height: 100%;
 	border-bottom: 1px solid #5bc0de;
-	overflow: none;
+	overflow: hidden;
 }
 
 .container_mail_phone {
@@ -618,7 +615,6 @@ progress::-webkit-progress-value {
 }
 
 .container_mail_phone p {
-	margin-bottom: 30px;
 	font-size: 1.2em;
 }
 
@@ -1123,7 +1119,12 @@ progress::-webkit-progress-value {
 
 	.container_experience {
 		width: 80%;
-		margin-bottom: 50px;
+		margin-bottom: 25px;
+		padding-bottom: 30px;
+	}
+
+	.filtered_experience {
+		background-color: rgb(0, 0, 0, 0.3);
 	}
 
 
@@ -1144,6 +1145,30 @@ progress::-webkit-progress-value {
 		min-width: 0;
 	}
 
+	.form_contact p {
+		margin-top: 30px;
+	}
+
+	.rezize_logo_footer {
+		margin-top: 25px;
+		margin-right: 20px;
+		margin-left: 20px;
+		width: 50px;
+		height: 50px;
+	}
+
+	.icone_footer {
+		width: 50px;
+		height: 50px;
+	}
+
+	.main_footer_title {
+		margin: auto;
+		padding: 0;
+		margin-top: 60px;
+		margin-bottom: 20px;
+		border: none;
+	}
 
 
 	/* BACK */

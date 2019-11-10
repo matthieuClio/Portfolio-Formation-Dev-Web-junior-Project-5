@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Portfolio Matthieu</title>
 		<meta name="description" content="Le livre Billet simple pour l'Alaska est disponible en lecture gratuite sur ce site.">
-		<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
+		<link rel="icon" type="image/jpg" href="public/images/icone/screen.png">
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 		<!-- Font-awesome -->
@@ -88,19 +88,10 @@
 
 
 		<!-- Display a notification if the email form is sended -->
-		<?php
-			if(!empty($_SESSION['notification'])) {
-
-				// Destroy the SESSION variable
-				unset($_SESSION['notification']);
-				?>
-				<div class="notification" id="container_notification">
-					Email envoyé
-					<i class="fa fa-window-close notification_close" id="button_notification"></i>
-				</div>
-				<?php
-			}
-			?>
+		<div class="notification" id="container_notification">
+			Email envoyé
+			<i class="fa fa-window-close notification_close" id="button_notification"></i>
+		</div>
 
 		<div class="slider" id="accueil">
 			<!-- Image in background -->
@@ -321,7 +312,7 @@
 			<div class="form_background_two">
 			</div>
 	
-			<form method="post" action="accueil" class="form_contact">
+			<form method="post" action="accueil" class="form_contact" id="my_form">
 				<section>
 					<h2 class="form_contact_h2">Formulaire de contact</h2>
 
@@ -413,7 +404,8 @@
 			</div>
 		</footer>
 		
-		<script src="public/js/class/Notification.js"></script>
+		<script src="public/js/class/Email.js"></script>
+		<!-- <script src="public/js/class/Notification.js"></script> -->
 		<script src="public/js/class/Menu.js"></script>
 		<script src="public/js/main.js"></script>
 	</body>

@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Portfolio Matthieu</title>
 		<meta name="description" content="Le livre Billet simple pour l'Alaska est disponible en lecture gratuite sur ce site.">
-		<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
+		<link rel="icon" type="image/jpg" href="public/images/icone/screen.png">
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 		<!-- Font-awesome -->

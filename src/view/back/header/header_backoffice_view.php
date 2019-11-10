@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portfolio Matthieu</title>
 	<meta name="description" content="Protfolio développeur web de Matthieu CLIO">
-	<link rel="icon" type="image/jpg" href="public/images/icone/keyboard.png">
+	<link rel="icon" type="image/jpg" href="public/images/icone/screen.png">
 
 	<!-- Font-awesome -->
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

@@ -10,7 +10,18 @@ menuObject.menuOpen();
 
 // Notification object
 // ...
-let notificationObject = new Notification();
+//let notificationObject = new Notification();
 
 // Hide the notification
-notificationObject.notificationOpen();
+//notificationObject.notificationOpen();
+
+
+// Email object
+// ...
+let emailObject = new Email();
+
+// Send email
+emailObject.sendEmail();
+
+// Send email
+emailObject.notificationClosed();

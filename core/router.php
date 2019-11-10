@@ -13,10 +13,10 @@
 		require('../src/controller/accueil.php');
 	}
 
-	// Home page (access by contact form)
-	else if ($url[0] == 'accueil')
+	// Send email page
+	else if ($url[0] == 'email')
 	{
-		require('../src/controller/accueil.php');
+		require('../src/controller/email.php');
 	}
 
 	// Backoffice project page
