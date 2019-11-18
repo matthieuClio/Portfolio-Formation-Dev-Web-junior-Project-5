@@ -293,7 +293,7 @@ progress::-webkit-progress-value {
 	padding-top: 100px;
 	padding-bottom: 20px;
 	width: 100%;
-	background-color: rgb(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	font-size: 2em;
 }
 
@@ -304,7 +304,7 @@ progress::-webkit-progress-value {
 	padding-top: 20px;
 	padding-bottom: 150px;
 	width: 100%;
-	background-color: rgb(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	font-size: 2em;
 	color: white;
 }
@@ -380,7 +380,7 @@ progress::-webkit-progress-value {
 
 .experience {
 	position: relative;
-	height: 1080px;
+	max-height: 1080px;
 	text-align: center;
 	color: white;
 	background: url(../images/photo/tour.jpg) no-repeat fixed center;
@@ -495,7 +495,7 @@ progress::-webkit-progress-value {
 	clear: both;
 	position: relative;
 	padding-bottom: 50px;
-	height: 1000px;
+	max-height: 1000px;
 	text-align: center;
 	font-size: 1.7em;
 }
@@ -533,7 +533,7 @@ progress::-webkit-progress-value {
 }
 
 .form_contact textarea {
-	height: 70px;
+	height: 120px;
 	font-family: Verdana;
 }
 
@@ -610,8 +610,8 @@ progress::-webkit-progress-value {
 }
 
 .icone_footer {
-	width: 75px;
-	height: 75px;
+	width: 65px;
+	height: 65px;
 }
 
 .container_mail_phone p {
@@ -914,7 +914,6 @@ progress::-webkit-progress-value {
 }
 
 
-
 /* Factored */
 /* .................... */
 /* .................... */
@@ -1145,8 +1144,17 @@ progress::-webkit-progress-value {
 		min-width: 0;
 	}
 
+	.form_contact textarea {
+		height: 70px;
+	}
+
 	.form_contact p {
 		margin-top: 30px;
+	}
+
+	div .information_footer {
+		display: block;
+		margin: auto;
 	}
 
 	.rezize_logo_footer {

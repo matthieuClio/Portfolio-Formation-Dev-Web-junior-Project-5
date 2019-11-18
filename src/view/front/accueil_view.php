@@ -170,18 +170,25 @@
 				poursuivre ma carrière de développeur web.
 				<br>
 				<br>
-				Mes précédents travails, stages et alternance m’ont apporté une expérience 
+				Anciennement chez FDBI pendant 2 mois,
 				<br>
-				professionnelle principalement dans le domaine du développement web,
+				je me tiens à disposition pour mettre mon sérieux 
 				<br>
-				de la programmation et du réseau informatique.
+				et ma détermination au service de l'entreprise.
+				<br>
+				<br>
+				Mes précédents postes m’ont apporté une véritable expérience 
+				<br>
+				professionnelle dans le développement web
+				<br>
+				et du réseau informatique.
 				<br>
 				<br>
 				Sportif dans l'âme, joue actuellement dans une équipe de foot en 7 vs 7
 				<br>
 				en paticipation avec la FLA et pratique régulièrement la musculation
 				<br>
-				pour rester en forme, avec comme objectif : se surpasser.
+				pour rester en forme, avec comme objectif : se surpasser !
 				<br>
 				<br>
 				<a href="public/cv/cv_developpeur_web_matthieu_clio.pdf" download="cv_developpeur_web_matthieu_clio" class="button_blue fa fa-user-circle">
